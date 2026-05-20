@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakagin Würfel Karussell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
+        <div class="panel-wrapper">
+            <div class="panel-icon">
+                <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+            </div>
+            <div class="panel-indicator"></div>
+
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Nakagin Capsule Tower • Kisho Kurokawa • 1972 • Tokyo • Metabolismus • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Der Nakagin Capsule Tower in Tokyo, Japan, wurde 1972 von Kisho Kurokawa fertiggestellt. Das Gebäude ist ein Meisterwerk des Metabolismus und besteht aus modularen Wohnkapseln, die um zwei Betonkernschächte gruppiert sind. Jede Kapsel ist eine eigenständige Wohneinheit mit allem Notwendigen.
+            </div>
+
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Kisho Kurokawa • Metabolismus • Japanische Architektur • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+                Kisho Kurokawa ist ein legendärer japanischer Architekt und Vertreter der Metabolismus-Bewegung. Seine Werke sind bekannt für ihre innovative Nutzung modularer Strukturen und ihre Integration mit der Natur. Kurokawa prägte eine neue Architekturphilosophie, die Vergänglichkeit und Veränderung als zentrale Prinzipien betrachtet.
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+
+        <div class="carousel-wrapper">
+            <div class="carousel-content" id="carouselContent">
+                <!-- Item 1 -->
+                <div class="carousel-item circle-item">
+                    <img src="nakagin_capsule.png" alt="Würfel 1 Hintergrund" class="full-background">
+                    <div class="circle-frame">
+                        <video autoplay muted loop playsinline>
+                            <source src="THE%20INFINITE%20HAPPINESS%20-%20Beka%20%26%20Lemoine%20-%20Trailer%20-%20Bjarke%20Ingels.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="carousel-item circle-item">
+                    <img src="nakagin_capsule.png" alt="Würfel 2 Hintergrund" class="full-background">
+                    <div class="circle-frame">
+                        <img src="Artboard%203.png" alt="Würfel 2 Bild" class="circle-image">
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="carousel-item circle-item">
+                    <img src="nakagin_capsule.png" alt="Würfel 3 Hintergrund" class="full-background">
+                    <div class="circle-frame">
+                        <img src="Artboard%2012.png" alt="Würfel 3 Bild" class="circle-image">
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="carousel-item circle-item">
+                    <img src="nakagin_capsule.png" alt="Würfel 4 Hintergrund" class="full-background">
+                    <div class="circle-frame">
+                        <img src="nakagin_capsule.png" alt="Würfel 4 Bild" class="circle-image">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="carousel-btn" id="prevBtn">← Zurück</button>
+            <button class="carousel-btn" id="nextBtn">Weiter →</button>
+        </div>
+
+        <div class="carousel-indicators" id="indicators"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

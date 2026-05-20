@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 House</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
+        <div class="panel-wrapper">
+            <div class="panel-icon">
+                <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+            </div>
+            <div class="panel-indicator"></div>
+
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">8 House • Bjarke Ingels • 2010 • Kopenhagen • Big • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Das 8 House in Kopenhagen, Dänemark, wurde 2010 von Big (Bjarke Ingels Group) fertiggestellt. Das Gebäude ist ein innovatives Wohnprojekt, das sich um einen zentralen Innenhof dreht und mit seiner einzigartigen Acht-Form die städtische Morphologie reflektiert. Es verbindet Wohnen, Arbeiten und Freizeit in einer neuen urbanen Typologie.
+            </div>
+
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Bjarke Ingels • Big • Zeitgenössische Architektur • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+                Bjarke Ingels ist ein dänischer Architekt und Gründer von Big (Bjarke Ingels Group). Seine Werke sind bekannt für ihre innovative und spielerische Herangehensweise an zeitgenössische Architektur. Ingels verbindet funktionales Design mit visueller Wirkung und schafft Gebäude, die Ressourceneffizienz mit ästhetischer Exzellenz verbinden.
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <nav></nav>
+        <div class="background">
+            <img src="wiese.png" alt="wiese mit kühen" class="full-background">
+        </div>
+
+        <div class="video">
+            <video autoplay loop playsinline>
+                <source src="THE INFINITE HAPPINESS - Beka & Lemoine - Trailer - Bjarke Ingels.mp4" type="video/mp4">
+                
+            </video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grosssiedlungen UI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  /* ── LEFT UI: Grosssiedlungen + Info ── */
+  .ui-top-left {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    z-index: 100;
+  }
+
+  .btn-gross {
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    text-transform: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .btn-info {
+    background: #fff;
+    color: #000;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .btn-info::after {
+    content: '▶';
+    font-size: 9px;
+    color: #000;
+  }
+
+  /* ── RIGHT UI: Panel ── */
+  .ui-top-right {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 260px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* small square icon top-right */
+  .panel-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .panel-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+  }
+
+  /* white square indicator */
+  .panel-indicator {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    z-index: 3;
+  }
+
+  /* dropdown rows */
+  .dropdown-row {
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+
+  .dropdown-row:first-child {
+    padding-top: 0;
+  }
+
+  .dropdown-ticker-wrap {
+    flex: 1;
+    overflow: hidden;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    position: relative;
+  }
+
+  .dropdown-ticker {
+    white-space: nowrap;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: #000;
+    display: inline-block;
+    animation: ticker-scroll 12s linear infinite;
+    padding-left: 100%;
+  }
+
+  .dropdown-row:nth-child(2) .dropdown-ticker {
+    animation-duration: 14s;
+  }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .dropdown-arrow {
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 0 8px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  .dropdown-row.open .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* expandable text panel */
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .dropdown-content.open {
+    max-height: 200px;
+    padding: 10px 10px;
+  }
+
+  .panel-wrapper {
+    position: relative;
+    background: #000;
+    padding-top: 28px; /* space for icon */
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP LEFT -->
+<div class="ui-top-left">
+  <button class="btn-gross">Grosssiedlungen</button>
+  <button class="btn-info">Info ▶</button>
+</div>
+
+<!-- TOP RIGHT -->
+<div class="ui-top-right">
+  <div class="panel-wrapper">
+    <!-- icon top right -->
+    <div class="panel-icon">
+      <svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>
+    </div>
+    <!-- white indicator square -->
+    <div class="panel-indicator"></div>
+
+    <!-- Row 1 -->
+    <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+      <div class="dropdown-ticker-wrap">
+        <span class="dropdown-ticker">8 House, Dänemark &nbsp;&nbsp;&nbsp;&nbsp; 8 House, Dänemark &nbsp;&nbsp;&nbsp;&nbsp; 8 House, Dänemark</span>
+      </div>
+      <div class="dropdown-arrow">▼</div>
+    </div>
+    <div class="dropdown-content" id="content1">
+      Das 8 House in Kopenhagen, Dänemark, wurde 2010 von BIG Architects fertiggestellt. Das Gebäude verbindet Wohn-, Gewerbe- und Freizeitfunktionen in einer einzigen geschwungenen Struktur, die in der Form einer Acht angelegt ist. Eine durchgehende Promenade schlängelt sich vom Erdgeschoss bis auf das Dach.
+    </div>
+
+    <!-- Row 2 -->
+    <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+      <div class="dropdown-ticker-wrap">
+        <span class="dropdown-ticker">BIG Architects &nbsp;&nbsp;&nbsp;&nbsp; BIG Architects &nbsp;&nbsp;&nbsp;&nbsp; BIG Architects &nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </div>
+      <div class="dropdown-arrow">▼</div>
+    </div>
+    <div class="dropdown-content" id="content2">
+      Bjarke Ingels Group (BIG) ist ein dänisches Architekturbüro, gegründet 2005 von Bjarke Ingels. Das Studio ist bekannt für seine pragmatische Utopie – die Verbindung von sozialer, ökologischer und wirtschaftlicher Nachhaltigkeit mit innovativem Design.
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown(contentId, rowId) {
+    const content = document.getElementById(contentId);
+    const row = document.getElementById(rowId);
+    content.classList.toggle('open');
+    row.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
