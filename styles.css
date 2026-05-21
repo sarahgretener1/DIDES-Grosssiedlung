@@ -5,12 +5,20 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.page-nakagin {
     background: #333333;
     min-height: 100vh;
     display: block;
-    padding: 0;
-    overflow: hidden;
+}
+
+.page-ui-elements {
+    background: transparent;
 }
 
 /* ── LEFT UI: Grosssiedlungen + Info ── */
@@ -144,7 +152,7 @@ body {
     padding-left: 100%;
 }
 
-.dropdown-row:nth-child(3) .dropdown-ticker {
+#row2 .dropdown-ticker {
     animation-duration: 14s;
 }
 
@@ -193,7 +201,64 @@ body {
     padding-top: 28px;
 }
 
-.carousel-container {
+/* ui-elements overrides */
+.page-ui-elements .btn-gross {
+    background: #000;
+    color: #fff;
+}
+
+.page-ui-elements .btn-info {
+    background: #fff;
+    color: #000;
+}
+
+.page-ui-elements .ui-top-right {
+    width: 260px;
+    border: none;
+}
+
+/* 8 House page */
+.page-8house .content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.page-8house .background {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.page-8house .full-background {
+    width: 120%;
+    height: 120%;
+    margin-left: -10%;
+    margin-top: -10%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.page-8house .video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%, -27%);
+    aspect-ratio: 16/9;
+    z-index: 100;
+}
+
+.page-8house .video video {
+    width: 110%;
+    height: 110%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Nakagin page */
+.page-nakagin .carousel-container {
     width: 100%;
     max-width: 100%;
     background: transparent;
@@ -208,23 +273,23 @@ body {
     height: 100vh;
 }
 
-.carousel-header {
+.page-nakagin .carousel-header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.carousel-header h1 {
+.page-nakagin .carousel-header h1 {
     font-size: 28px;
     color: #fff;
     margin-bottom: 10px;
 }
 
-.carousel-header p {
+.page-nakagin .carousel-header p {
     color: #ccc;
     font-size: 14px;
 }
 
-.carousel-wrapper {
+.page-nakagin .carousel-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -234,7 +299,7 @@ body {
     justify-content: center;
 }
 
-.carousel-content {
+.page-nakagin .carousel-content {
     display: flex;
     gap: 0;
     padding: 20px 0;
@@ -244,16 +309,14 @@ body {
     transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-.carousel-track {
+.page-nakagin .carousel-track {
     position: absolute;
     width: 100%;
     height: 100%;
     pointer-events: none;
 }
 
-
-
-.carousel-item {
+.page-nakagin .carousel-item {
     flex: 0 0 33.333%;
     min-width: 0;
     height: 60vh;
@@ -268,22 +331,22 @@ body {
     border: none;
 }
 
-.carousel-item.circle-item {
+.page-nakagin .carousel-item.circle-item {
     overflow: visible;
 }
 
-.carousel-item:hover {
+.page-nakagin .carousel-item:hover {
     transform: none;
     box-shadow: none;
     border-color: transparent;
 }
 
-.circle-item {
+.page-nakagin .circle-item {
     position: relative;
     overflow: visible !important;
 }
 
-.full-background {
+.page-nakagin .full-background {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -294,7 +357,7 @@ body {
     opacity: 1;
 }
 
-.circle-frame {
+.page-nakagin .circle-frame {
     width: calc(42% + 20px);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -309,7 +372,7 @@ body {
     transform: translateX(-77px) translateY(3px);
 }
 
-.circle-frame video {
+.page-nakagin .circle-frame video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -317,7 +380,7 @@ body {
     opacity: 0.75;
 }
 
-.circle-image {
+.page-nakagin .circle-image {
     width: 124%;
     height: 124%;
     object-fit: cover;
@@ -326,13 +389,13 @@ body {
     max-height: none;
 }
 
-.circle-frame iframe {
+.page-nakagin .circle-frame iframe {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
 
-img {
+.page-nakagin img {
     width: auto;
     height: auto;
     max-width: 100%;
@@ -341,14 +404,14 @@ img {
     display: block;
 }
 
-.carousel-controls {
+.page-nakagin .carousel-controls {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
 }
 
-.carousel-btn {
+.page-nakagin .carousel-btn {
     background: #667eea;
     color: white;
     border: none;
@@ -360,23 +423,23 @@ img {
     transition: all 0.3s ease;
 }
 
-.carousel-btn:hover {
+.page-nakagin .carousel-btn:hover {
     background: #764ba2;
     transform: scale(1.05);
 }
 
-.carousel-btn:active {
+.page-nakagin .carousel-btn:active {
     transform: scale(0.95);
 }
 
-.carousel-indicators {
+.page-nakagin .carousel-indicators {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 15px;
 }
 
-.indicator {
+.page-nakagin .indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -385,38 +448,38 @@ img {
     transition: all 0.3s ease;
 }
 
-.indicator.active {
+.page-nakagin .indicator.active {
     background: #667eea;
     width: 30px;
     border-radius: 6px;
 }
 
 @media (max-width: 768px) {
-    .carousel-item {
+    .page-nakagin .carousel-item {
         flex: 0 0 50%;
         height: 40vh;
     }
 
-    .carousel-header h1 {
+    .page-nakagin .carousel-header h1 {
         font-size: 22px;
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-item {
+    .page-nakagin .carousel-item {
         flex: 0 0 100%;
         height: 32vh;
     }
 
-    .carousel-container {
+    .page-nakagin .carousel-container {
         padding: 20px 10px;
     }
 
-    .carousel-controls {
+    .page-nakagin .carousel-controls {
         flex-direction: column;
     }
 
-    .carousel-btn {
+    .page-nakagin .carousel-btn {
         width: 100%;
     }
 }
