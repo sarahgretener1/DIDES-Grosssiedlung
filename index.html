@@ -4,10 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8 House</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .home-scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .home-fester {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .light-8house {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
-    <img class="home-fenster" src="home-fenster.png">
-    <div class="light-8house"></div> <!-- Lichtquelle für 8 House -->
+    <div class="home-scene">
+        <img src="home-fester.png" alt="Home Fester" class="home-fester">
+        <div class="light-8house"></div>
+    </div>
 
 </body>
 </html>
