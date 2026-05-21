@@ -217,6 +217,23 @@ body {
     border: none;
 }
 
+/*index page*/
+.home-fenster {
+    position: absolute;
+    width: 170vw;
+    height: auto;
+    display: flex;
+    transform: translate(-11%, -6.5%);
+    z-index: 1;
+}
+
+.light-8house {
+    width: 20vw;
+    height: 50vh;
+    background-color: yellow;
+    z-index: 10;
+}
+
 /* 8 House page */
 .page-8house .content-wrapper {
     width: 100%;
