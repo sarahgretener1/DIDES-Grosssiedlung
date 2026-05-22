@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>radieuse_test</title>
+    <title>front</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Roboto Mono Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
       #street-view-iframe {
         position: fixed;
@@ -41,31 +43,30 @@
                 <div class="dropdown-arrow">▼</div>
             </div>
             <div class="dropdown-content" id="content2">
-                Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+              Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
             </div>
         </div>
     </div>
 
-
-    <div class="info-box-blau">
-      In diesem Gebäude zu wohnen bedeutet, sich für die Qualität der Räume zu entscheiden, die uns geboten werden, auch wenn man sich vielleicht in das Schema einfügen muss, das Le Corbusier uns vorgeschlagen hat und das, sagen wir mal, manchmal etwas streng ist. Entweder man akzeptiert es oder man akzeptiert es nicht. Man bringt nicht seinen normannischen Schrank oder sein Sideboard mit – nun ja, man kann es zwar, aber es wirkt deplatziert, auch wenn es solche Fälle gibt. Man fügt sich in die von Le Corbusier entworfene Welt ein.“
+    <!-- STREET VIEW als IFRAME (kein JS/API!) -->
+    <!-- TEXTBOX LINKS OBEN -->
+    <div class="info-box-white">
+      Die Cité Radieuse von Le Corbusier war ein neues Wohnkonzept für moderne Städte. Die Idee war eine „vertikale Stadt“, in der viele Funktionen des Alltags in einem Gebäude vereint werden. Wohnungen sollten hell, praktisch und standardisiert sein, damit das Leben effizienter wird. Gleichzeitig wollte Le Corbusier das Gemeinschaftsleben fördern – durch gemeinschaftliche Einrichtungen, Nachbarschaft und die Mischung verschiedener Haushalte.
     </div>
 
-    <img class="bild-radieuse" src="wonung_cite_radieuse.jpg" alt="Wohnung Cité Radieuse" />
-  
-
-    <!-- STREET VIEW als IFRAME (kein JS/API!) -->
+    <!-- ZITAT UNTEN MITTE -->
+    <div class="info-box-black">
+      Freiheit durch Ordnung bedeutet genau das: alles an seinen Platz zu rücken.<br><br> le Corbusier
+    
+    </div>
     <iframe
       id="street-view-iframe"
-      src="https://www.google.com/maps/embed?pb=!4v1779384134815!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQy1uUDZMaEFF!2m2!1d43.26098249776995!2d5.396664135677592!3f212.72!4f-2.799999999999997!5f0.4000000000000002"
-      allowfullscreen=""
+      src="https://www.google.com/maps/embed?pb=!4v1779387583015!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRDRsWUwwamdF!2m2!1d43.26125319476246!2d5.396754010485897!3f280.3709766378171!4f44.660020004767404!5f0.7820865974627469"
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
       title="Street View Cité Radieuse">
     </iframe>
-    <!-- Bild der Wohnung Cité Radieuse -->
 
- 
     <!-- NAVIGATION BOX UNTEN MITTE (CSS-Dreiecke) -->
     <div class="navigation-box">
       <a href="dach.html" class="triangle triangle-up" tabindex="0"></a>
