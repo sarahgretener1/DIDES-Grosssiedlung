@@ -2,39 +2,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8 House</title>
+    <title>Grosssiedlung</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .home-scene {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .home-fester {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .light-8house {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="home-scene">
-        <img src="home-fester.png" alt="Home Fester" class="home-fester">
-        <div class="light-8house"></div>
+
+        <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+    
+    <!-- Titel -->
+    <div class="header-title">
+        <h1>Grosssiedlungen</h1>
     </div>
 
+    <!--fenster & lichtquellen-->    
+    <div class="home">    
+         <div class="light-8house"></div> <!-- Lichtquelle für 8 House -->
+         <div class="light-cite_radieuse1"></div> <!-- Lichtquelle für Cité Radieuse -->
+         <div class="light-cite_radieuse2"></div> <!-- Lichtquelle für Cité Radieuse -->
+         <div class="light-cite_radieuse3"></div> <!-- Lichtquelle für Cité Radieuse -->
+
+         <div class="light-nakagin1"></div> <!-- Lichtquelle für Nakagin -->
+         <div class="light-nakagin2"></div> <!-- Lichtquelle für Nakagin -->
+         <div class="light-nakagin3"></div> <!-- Lichtquelle für Nakagin -->
+
+         <div class="light-plattenbau1"></div> <!-- Lichtquelle für plattenbau -->
+         <div class="light-plattenbau2"></div> <!-- Lichtquelle für plattenbau -->
+         <div class="light-plattenbau3"></div> <!-- Lichtquelle für plattenbau -->
+         <div class="light-plattenbau4"></div> <!-- Lichtquelle für plattenbau -->
+
+         <img class="home-fenster" src="home-fenster.png">
+         <img class="cite-radieuse" src="cité radieuse.png">
+       
+    </div>
+
+<script src="/8 House/script.js"></script>
 </body>
 </html>
