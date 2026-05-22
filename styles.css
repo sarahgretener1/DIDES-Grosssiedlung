@@ -27,9 +27,9 @@ h1 {
   font-style: normal;
   animation: grosssiedlung 1s ease-out forwards;
   transform-origin: top center;
-  transform: scaleY(5);
-  
-   animation-iteration-count: 1;
+ transform: scaleY(5) translateY(0);
+ opacity: 1;
+ animation-iteration-count: 1;
   animation-delay: 1s;
 }
 
@@ -37,17 +37,17 @@ h1 {
 @keyframes grosssiedlung {
 
     0% {
-        transform: scaleY(5);
-    }
-    50% {
-        transform: scaleY(1);
-            transform: translateY(70%);
-        
-}
+       transform: scaleY(5) translateY(0);
+       opacity: 1;
+   }
+   50% {
+       transform: scaleY(1) translateY(70%);
+       opacity: 1;
+   }
 
-100% {
-        transform: scaleY(1);
-        transform: translateY(-20%);
+   100% {
+       transform: scaleY(1) translateY(-20%);
+       opacity: 0;
     }
 
 }
@@ -260,11 +260,32 @@ h1 {
 }
 
 /*index page*/
+.header-title {
+    position: relative;
+    z-index: 20;
+}
+
 .home {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1fr, 8);
     grid-template-rows: repeat(1fr,6);
+    position: relative;
+    z-index: 10;
+    animation: home-rise 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes home-rise {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(70%);
+    }
+    100% {
+        transform: translateY(-20%);
+    }
 }
 .home-fenster {
     position: absolute;
