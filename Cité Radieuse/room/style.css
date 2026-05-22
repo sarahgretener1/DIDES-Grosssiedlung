@@ -1,3 +1,8 @@
+/* ── DREIECKE OVERLAY ── */
+
+.navigation-box svg {
+    display: block;
+}
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +15,133 @@ body {
     overflow: hidden;
     font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
+ 
+/*dach info*/
+.info-box-yellow{
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 500px;
+    background: rgba(255,225,0,0.5);
+    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    color:  rgb(255, 0, 0);
+    line-height: 1.4;
+    padding: 24px 24px 24px 24px;
+    z-index: 200;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.info-box-yellow:hover{
+opacity: 1;
+background: rgba(255,225,0);
+}
+
+.info-box-red{
+    position: fixed;
+    bottom: 200px;
+    left: 20px;
+    width: 300px;
+    background: rgb(255, 0, 0,0.5);
+    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    color: rgba(39, 20, 244);
+    line-height: 1.4;
+    padding: 24px 24px 24px 24px;
+    z-index: 200;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.info-box-red:hover {
+    opacity: 1;
+    background:  rgb(255, 0, 0);
+}
+
+/*room infos*/
+.info-box-blau{
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 300px;
+    background: rgba(39, 20, 244, 0.5);
+    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    color:rgba(255,225,0);
+    line-height: 1.4;
+    padding: 24px 24px 24px 24px;
+    z-index: 200;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.info-box-blau:hover {
+    opacity: 1;
+    background: rgb(39, 20, 244);}
+
+.bild-radieuse {
+    display: block;
+    position: fixed;
+    top: 100px;
+    left: 40px;
+    width: 300px;
+    z-index: 300;
+    opacity: 0.7;
+    transition: width 1s, opacity 1s;}
+
+.bild-radieuse:hover {
+    opacity: 1;
+    width: 500px;
+}
+
+
+
+
+/*fron infos*/
+.info-box-white {
+    position: fixed;
+    top: 130px;
+    left: 24px;
+    width: 300px;
+    background: rgb(255, 255, 255,0.5);
+    color: #111;
+    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 24px 24px 24px 24px;
+    z-index: 200;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.info-box-white:hover {
+    opacity: 1;
+    background: rgba(255,255,255);
+}
+
+/* ── QUOTE BOX BOTTOM CENTER ── */
+.info-box-black {
+    position: fixed;
+    right: 100px;
+    bottom: 40px;
+    min-width: 200px;
+    max-width: 300px;
+    background: rgba(10,10,10,0.5);
+    color: #fff;
+    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    font-size: 14px;
+    padding: 24px 24px 24px 24px;
+    z-index: 200;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.info-box-black:hover {
+    opacity: 1;
+      background: rgba(10,10,10);
+}
+
 
 
 /* ── LEFT UI: Grosssiedlungen + Info ── */
@@ -73,6 +205,8 @@ body {
     flex-direction: column;
     gap: 0;
     border: black solid 10px;
+    border-top: b;
+    z-index: 800;
 }
 
 
@@ -177,4 +311,80 @@ body {
 .page-ui-elements .ui-top-right {
     width: 260px;
     border: none;
+}
+.triangle-overlay {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+}
+/* ── NAVIGATION BOX UNTEN MITTE ── */
+.navigation-box {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 100px;                  
+    height: 100px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: 0;
+    padding: 0;
+}
+
+/* UP (rot) */
+.triangle-up {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 13px 22px 13px;
+    border-color: transparent transparent  rgb(255, 0, 0) transparent;
+}
+
+/* DOWN (gelb) */
+.triangle-down {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 22px 13px 0 13px;
+    border-color: rgb(255, 225, 0) transparent transparent transparent;
+}
+
+/* LEFT (schwarz) */
+.triangle-left {
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 13px 22px 13px 0;
+    border-color: transparent black transparent transparent;
+}
+
+/* RIGHT (blau) */
+.triangle-right {
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent rgb(39, 20, 244);
 }

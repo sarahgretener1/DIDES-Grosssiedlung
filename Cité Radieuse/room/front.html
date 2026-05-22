@@ -4,6 +4,8 @@
     <title>front</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Roboto Mono Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
       #street-view-iframe {
         position: fixed;
@@ -32,7 +34,7 @@
                 <div class="dropdown-arrow">▼</div>
             </div>
             <div class="dropdown-content" id="content1">
-                Die Cité Radieuse in Marseille ist eines der bekanntesten Wohngebäude von Le Corbusier. </div>
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.</div>
 
             <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
                 <div class="dropdown-ticker-wrap">
@@ -41,12 +43,22 @@
                 <div class="dropdown-arrow">▼</div>
             </div>
             <div class="dropdown-content" id="content2">
-                Le Corbusier prägte die Architektur des 20. Jahrhunderts mit seinen Ideen zur Wohnform.
+              Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
             </div>
         </div>
     </div>
 
     <!-- STREET VIEW als IFRAME (kein JS/API!) -->
+    <!-- TEXTBOX LINKS OBEN -->
+    <div class="info-box-white">
+      Die Cité Radieuse von Le Corbusier war ein neues Wohnkonzept für moderne Städte. Die Idee war eine „vertikale Stadt“, in der viele Funktionen des Alltags in einem Gebäude vereint werden. Wohnungen sollten hell, praktisch und standardisiert sein, damit das Leben effizienter wird. Gleichzeitig wollte Le Corbusier das Gemeinschaftsleben fördern – durch gemeinschaftliche Einrichtungen, Nachbarschaft und die Mischung verschiedener Haushalte.
+    </div>
+
+    <!-- ZITAT UNTEN MITTE -->
+    <div class="info-box-black">
+      Freiheit durch Ordnung bedeutet genau das: alles an seinen Platz zu rücken.<br><br> le Corbusier
+    
+    </div>
     <iframe
       id="street-view-iframe"
       src="https://www.google.com/maps/embed?pb=!4v1779387583015!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRDRsWUwwamdF!2m2!1d43.26125319476246!2d5.396754010485897!3f280.3709766378171!4f44.660020004767404!5f0.7820865974627469"
@@ -54,6 +66,14 @@
       referrerpolicy="no-referrer-when-downgrade"
       title="Street View Cité Radieuse">
     </iframe>
+
+    <!-- NAVIGATION BOX UNTEN MITTE (CSS-Dreiecke) -->
+    <div class="navigation-box">
+      <a href="dach.html" class="triangle triangle-up" tabindex="0"></a>
+      <a href="radieuse_room.html" class="triangle triangle-left" tabindex="0"></a>
+      <a href="gang.html" class="triangle triangle-right" tabindex="0"></a>
+      <a href="front.html" class="triangle triangle-down" tabindex="0"></a>
+    </div>
 
     <script>
       function toggleDropdown(contentId, rowId) {
