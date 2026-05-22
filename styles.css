@@ -30,7 +30,7 @@ h1 {
  transform: scaleY(5) translateY(0);
  opacity: 1;
  animation-iteration-count: 1;
-  animation-delay: 1s;
+ animation-delay: 0s;
 }
 
 
@@ -40,13 +40,13 @@ h1 {
        transform: scaleY(5) translateY(0);
        opacity: 1;
    }
-   50% {
-       transform: scaleY(1) translateY(70%);
+   70% {
+      transform: scaleY(1) translateY(0);
        opacity: 1;
    }
 
    100% {
-       transform: scaleY(1) translateY(-20%);
+      transform: scaleY(1) translateY(-30%);
        opacity: 0;
     }
 
@@ -272,19 +272,20 @@ h1 {
     grid-template-rows: repeat(1fr,6);
     position: relative;
     z-index: 10;
-    animation: home-rise 1s ease-out forwards;
+    transform: translateY(20%);
+    opacity: 0;
+    animation: home-rise 0.9s ease-out forwards;
     animation-delay: 1s;
 }
 
 @keyframes home-rise {
     0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(70%);
+        transform: translateY(20%);
+        opacity: 0;
     }
     100% {
         transform: translateY(-20%);
+        opacity: 1;
     }
 }
 .home-fenster {
