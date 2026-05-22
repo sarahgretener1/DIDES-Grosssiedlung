@@ -299,16 +299,43 @@ h1 {
 
 .cite-radieuse {
     position: absolute;
-    width: 172vw;
-    height: auto;
-    transform: translate(-11.2%, -2%);
+    width: auto;
+    height: 119vh;
+    width: auto;
+    transform-origin: bottom right;
+    justify-items: end;
     z-index: 1;
     opacity: 0;
+    transform: translate(47%, -13.5%);
 }
 
 .home:has(.light-cite_radieuse1:hover) .home-fenster,
 .home:has(.light-cite_radieuse2:hover) .home-fenster,
-.home:has(.light-cite_radieuse3:hover) .home-fenster {
+.home:has(.light-cite_radieuse3:hover) .home-fenster,
+.home:has(.light-cite_radieuse1:hover) .light-8house,
+.home:has(.light-cite_radieuse2:hover) .light-8house,
+.home:has(.light-cite_radieuse3:hover) .light-8house,
+.home:has(.light-cite_radieuse1:hover) .light-nakagin1,
+.home:has(.light-cite_radieuse2:hover) .light-nakagin1,
+.home:has(.light-cite_radieuse3:hover) .light-nakagin1,
+.home:has(.light-cite_radieuse1:hover) .light-nakagin2,
+.home:has(.light-cite_radieuse2:hover) .light-nakagin2,
+.home:has(.light-cite_radieuse3:hover) .light-nakagin2,
+.home:has(.light-cite_radieuse1:hover) .light-nakagin3,
+.home:has(.light-cite_radieuse2:hover) .light-nakagin3,
+.home:has(.light-cite_radieuse3:hover) .light-nakagin3,
+.home:has(.light-cite_radieuse1:hover) .light-plattenbau1,
+.home:has(.light-cite_radieuse2:hover) .light-plattenbau1,
+.home:has(.light-cite_radieuse3:hover) .light-plattenbau1,
+.home:has(.light-cite_radieuse1:hover) .light-plattenbau2,
+.home:has(.light-cite_radieuse2:hover) .light-plattenbau2,
+.home:has(.light-cite_radieuse3:hover) .light-plattenbau2,
+.home:has(.light-cite_radieuse1:hover) .light-plattenbau3,
+.home:has(.light-cite_radieuse2:hover) .light-plattenbau3,
+.home:has(.light-cite_radieuse3:hover) .light-plattenbau3,
+.home:has(.light-cite_radieuse1:hover) .light-plattenbau4,
+.home:has(.light-cite_radieuse2:hover) .light-plattenbau4,
+.home:has(.light-cite_radieuse3:hover) .light-plattenbau4 {
     opacity: 0;
 }
 
