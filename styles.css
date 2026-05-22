@@ -30,7 +30,7 @@ h1 {
  transform: scaleY(5) translateY(0);
  opacity: 1;
  animation-iteration-count: 1;
- animation-delay: 0s;
+ animation-delay: 1s;
 }
 
 
@@ -272,7 +272,7 @@ h1 {
     grid-template-rows: repeat(1fr,6);
     position: relative;
     z-index: 10;
-    transform: translateY(20%);
+    transform-origin: top center;
     opacity: 0;
     animation: home-rise 0.9s ease-out forwards;
     animation-delay: 1s;
@@ -280,11 +280,11 @@ h1 {
 
 @keyframes home-rise {
     0% {
-        transform: translateY(20%);
-        opacity: 0;
+        transform: translateY(900%);
+        opacity: 1;
     }
     100% {
-        transform: translateY(-20%);
+        transform: translateY(-30%);
         opacity: 1;
     }
 }
