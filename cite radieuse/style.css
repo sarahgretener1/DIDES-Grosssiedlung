@@ -30,13 +30,13 @@ body {
 
 .info-box-yellow,
 .info-box-yellow-r{
-    position: fixed;
     bottom: 100px;
     right: 20px;
     width: 500px;
     background: rgba(255,225,0,0.5);
     color:  rgb(255, 0, 0);
 }
+/* .info-box-yellow-r bleibt als Alias für bestehende Verwendungen erhalten */
 
 .info-box-yellow:hover,
 .info-box-yellow-r:hover{
@@ -45,7 +45,6 @@ background: rgba(255,225,0);
 }
 
 .info-box-red{
-    position: fixed;
     bottom: 200px;
     left: 20px;
     width: 300px;
@@ -60,7 +59,6 @@ background: rgba(255,225,0);
 
 /*room infos*/
 .info-box-blau{
-    position: fixed;
     bottom: 80px;
     right: 80px;
     width: 300px;
@@ -91,7 +89,6 @@ background: rgba(255,225,0);
 
 /*fron infos*/
 .info-box-white {
-    position: fixed;
     top: 130px;
     left: 24px;
     width: 300px;
