@@ -149,3 +149,42 @@ canvas {
     max-height: 200px;
     padding: 10px 10px;
 }
+
+#toggleVideoBtn {
+    position: fixed;
+    top: 40%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 49%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+#toggleVideoBtn:hover {
+    background: #444;
+}
+
+#toggleVideoBtn2 {
+ position: fixed;
+    top: 10%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 35%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}

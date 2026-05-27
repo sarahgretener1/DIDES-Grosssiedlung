@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+/* ── LINKES UI: Buttons ── */
+.ui-top-left {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    align-items: stretch;
+    z-index: 100;
+}
+
+.btn-gross {
+    background: #fff;
+    color: #000;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    padding: 6px 10px;
+    border: 10px solid #000;
+    cursor: pointer;
+    text-transform: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.btn-info {
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-info::after {
+    content: '▶';
+    font-size: 9px;
+    color: #000;
+}
+
+/* ── RECHTES UI: Panel & Dropdown ── */
+.ui-top-right {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 290px;
+    z-index: 800;
+    display: flex;
+    flex-direction: column;
+    border: black solid 10px;
+    gap: 0;
+}
+
+.dropdown-row {
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-ticker-wrap {
+    flex: 1;
+    overflow: hidden;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.dropdown-ticker {
+    white-space: nowrap;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: #000;
+    display: inline-block;
+    animation: ticker-scroll 12s linear infinite;
+    padding-left: 100%;
+}
+
+#row2 .dropdown-ticker {
+    animation-duration: 14s;
+}
+
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.dropdown-arrow {
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 0 8px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.dropdown-row.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+.dropdown-content.open {
+    max-height: 200px;
+    padding: 10px 10px;
+}
+
+#toggleVideoBtn {
+    position: fixed;
+    top: 40%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 49%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+#toggleVideoBtn:hover {
+    background: #444;
+}
+
+#toggleVideoBtn2 {
+ position: fixed;
+    top: 10%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 35%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+
+.background {
+    /* Deine bisherige Hintergrund-Grafik */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #265668 url('haus2.png') center center no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.video-frame {
+    position: absolute;
+    z-index: 1000;
+    aspect-ratio: 16 / 9;
+    background: #222;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video1 { /* Oben links */
+    top: 6.5%;
+    left: 33.67%;
+    width: 10.3%;
+}
+.video2 { /* Mitte rechts */
+    top: 37.4%;
+    left: 44.8%;
+    width: 10.3%;
+}
+.video3 { /* Unten rechts */
+    top: 52.9%;
+    left: 56%;
+    width: 10.3%;
+}
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* oder object-fit: contain; */
+    aspect-ratio: 16 / 9;
+}
+
+.video-lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 10000000;
+  justify-content: center;
+  align-items: center;
+}
+.video-lightbox.active {
+  display: flex;
+}
+.video-lightbox-inner {
+  position: relative;
+  width: 80vw;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+.video-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 2.3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 0 10px;
+  line-height: 1;
+  user-select: none;
+}
+#lightbox-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #000;
+}

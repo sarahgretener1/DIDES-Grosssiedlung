@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>radieuse_test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #street-view-iframe {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
+
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.</div>
+
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+                Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="info-box-blau">
+      In diesem Gebäude zu wohnen bedeutet, sich für die Qualität der Räume zu entscheiden, die uns geboten werden, auch wenn man sich vielleicht in das Schema einfügen muss, das Le Corbusier uns vorgeschlagen hat und das, sagen wir mal, manchmal etwas streng ist. Entweder man akzeptiert es oder man akzeptiert es nicht. Man bringt nicht seinen normannischen Schrank oder sein Sideboard mit – nun ja, man kann es zwar, aber es wirkt deplatziert, auch wenn es solche Fälle gibt. Man fügt sich in die von Le Corbusier entworfene Welt ein.“
+    </div>
+
+    <img class="bild-radieuse" src="wonung_cite_radieuse.jpg" alt="Wohnung Cité Radieuse" />
+  
+
+    <!-- STREET VIEW als IFRAME (kein JS/API!) -->
+    <iframe
+      id="street-view-iframe"
+      src="https://www.google.com/maps/embed?pb=!4v1779384134815!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQy1uUDZMaEFF!2m2!1d43.26098249776995!2d5.396664135677592!3f212.72!4f-2.799999999999997!5f0.4000000000000002"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Street View Cité Radieuse">
+    </iframe>
+    <!-- Bild der Wohnung Cité Radieuse -->
+
+ 
+    <!-- NAVIGATION BOX UNTEN MITTE (CSS-Dreiecke) -->
+    <div class="navigation-box">
+      <a href="dach.html" class="triangle triangle-up" tabindex="0"></a>
+      <a href="radieuse_room.html" class="triangle triangle-left" tabindex="0"></a>
+      <a href="gang.html" class="triangle triangle-right" tabindex="0"></a>
+      <a href="front.html" class="triangle triangle-down" tabindex="0"></a>
+    </div>
+
+    <script>
+      function toggleDropdown(contentId, rowId) {
+        const content = document.getElementById(contentId);
+        const row = document.getElementById(rowId);
+        content.classList.toggle('open');
+        row.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>
