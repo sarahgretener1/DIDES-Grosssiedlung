@@ -82,7 +82,7 @@ h1 {
     font-weight: 900;
     letter-spacing: 0.03em;
     padding: 6px 10px;
-    border: none;
+    border: 10px solid #000;
     cursor: pointer;
     text-transform: none;
     white-space: nowrap;
@@ -112,49 +112,24 @@ h1 {
     color: #000;
 }
 
+
+
 /* ── RIGHT UI: Panel ── */
 .ui-top-right {
     position: fixed;
     top: 16px;
     right: 16px;
+    margin: 0%;
     width: 290px;
     z-index: 100;
     display: flex;
     flex-direction: column;
     gap: 0;
     border: black solid 10px;
+    border-top: b;
+    z-index: 800;
 }
 
-.panel-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 28px;
-    height: 28px;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.panel-icon svg {
-    width: 14px;
-    height: 14px;
-    fill: #fff;
-}
-
-.panel-indicator {
-    width: 14px;
-    height: 14px;
-    background: #fff;
-    border: 2px solid #fff;
-    position: absolute;
-    top: 7px;
-    left: 8px;
-    z-index: 3;
-}
 
 .dropdown-row {
     background: #000;
@@ -257,6 +232,21 @@ h1 {
 .page-ui-elements .ui-top-right {
     width: 260px;
     border: none;
+}
+.triangle-overlay {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    border-radius: 24px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
 }
 
 /*index page*/
@@ -429,6 +419,61 @@ h1 {
     opacity: 1;
 }
 
+.DDR {
+    position: absolute;
+    width: auto;
+    height: 150vh;
+    width: auto;
+    justify-items: end;
+    z-index: 1;
+    opacity: 0;
+   transform: translate(-11%, -8.2%);
+}
+
+.home:has(.light-plattenbau1:hover) .home-fenster,
+.home:has(.light-plattenbau2:hover) .home-fenster,
+.home:has(.light-plattenbau3:hover) .home-fenster,
+.home:has(.light-plattenbau4:hover) .home-fenster,
+.home:has(.light-plattenbau1:hover) .light-nakagin1,
+.home:has(.light-plattenbau2:hover) .light-nakagin1,
+.home:has(.light-plattenbau3:hover) .light-nakagin1,
+.home:has(.light-plattenbau4:hover) .light-nakagin1,
+.home:has(.light-plattenbau1:hover) .light-nakagin2,
+.home:has(.light-plattenbau2:hover) .light-nakagin2,
+.home:has(.light-plattenbau3:hover) .light-nakagin2,
+.home:has(.light-plattenbau4:hover) .light-nakagin2,
+.home:has(.light-plattenbau1:hover) .light-nakagin3,
+.home:has(.light-plattenbau2:hover) .light-nakagin3,
+.home:has(.light-plattenbau3:hover) .light-nakagin3,
+.home:has(.light-plattenbau4:hover) .light-nakagin3,
+.home:has(.light-plattenbau1:hover) .light-cite_radieuse1,
+.home:has(.light-plattenbau2:hover) .light-cite_radieuse1,
+.home:has(.light-plattenbau3:hover) .light-cite_radieuse1,
+.home:has(.light-plattenbau4:hover) .light-cite_radieuse1,
+.home:has(.light-plattenbau1:hover) .light-cite_radieuse2,
+.home:has(.light-plattenbau2:hover) .light-cite_radieuse2,
+.home:has(.light-plattenbau3:hover) .light-cite_radieuse2, 
+.home:has(.light-plattenbau4:hover) .light-cite_radieuse2,
+.home:has(.light-plattenbau1:hover) .light-cite_radieuse3,
+.home:has(.light-plattenbau2:hover) .light-cite_radieuse3,
+.home:has(.light-plattenbau3:hover) .light-cite_radieuse3,
+.home:has(.light-plattenbau4:hover) .light-cite_radieuse3,
+.home:has(.light-plattenbau1:hover) .light-8house,
+.home:has(.light-plattenbau2:hover) .light-8house,
+.home:has(.light-plattenbau3:hover) .light-8house,
+.home:has(.light-plattenbau4:hover) .light-8house {
+    opacity: 0;
+
+}
+
+
+.home:has(.light-plattenbau1:hover) .DDR,
+.home:has(.light-plattenbau2:hover) .DDR,
+.home:has(.light-plattenbau3:hover) .DDR,
+.home:has(.light-plattenbau4:hover) .DDR
+{
+    opacity: 1;
+}
 
 
 
