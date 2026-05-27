@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>GLB Horizontale Mausdrehung Rückseite</title>
+   <link rel="stylesheet" href="style.css">
+  <style>
+ 
+  </style>
+</head>
+<body>
+
+      <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
+
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums. </div>
+
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+              Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+            </div>
+        </div>
+    </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/controls/OrbitControls.js"></script>
+  <script>
+
+        <!--cube rotation-->
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({antialias:true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor('#82b3b5');
+    document.body.appendChild(renderer.domElement);
+
+    let light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(2, 2, 2);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+    let controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
+    controls.enablePan = false;
+    controls.enableZoom = false;
+
+    // Begrenzung: 200° (±100° um die Rückseite)
+    const deg = Math.PI / 180;
+    controls.minAzimuthAngle = -100 * deg;
+    controls.maxAzimuthAngle = 100 * deg;
+
+    controls.minPolarAngle = Math.PI / 2;
+    controls.maxPolarAngle = Math.PI / 2;
+
+    // GLB laden
+    let cube;
+    let loader = new THREE.GLTFLoader();
+    loader.load('cube.glb', function(gltf){
+      cube = gltf.scene;
+      // Um 180° drehen, damit "hinten" als Front angezeigt wird:
+      cube.rotation.y = Math.PI;
+      scene.add(cube);
+    });
+
+    camera.position.z = 3;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth/window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    <!-- drop down menu-->
+      function toggleDropdown(contentId, rowId) {
+        const content = document.getElementById(contentId);
+        const row = document.getElementById(rowId);
+        content.classList.toggle('open');
+        row.classList.toggle('open');
+      }
+  </script>
+</body>
+</html>
