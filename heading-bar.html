@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heading Bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+  <style>
+    .heading-bar {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .heading-bar__frame {
+      width: 686px;
+      height: 113px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
+    }
+
+    .heading-bar__bg {
+      width: 685.70px;
+      height: 113px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
+      background: black;
+    }
+
+    .heading-bar__inner {
+      width: 642.23px;
+      height: 69.61px;
+      position: absolute;
+      left: 21.65px;
+      top: 21.70px;
+      background: white;
+    }
+
+    .heading-bar__title {
+      position: absolute;
+      left: 86px;
+      top: 27px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: black;
+      font-size: 55px;
+      font-family: 'Squada One', sans-serif;
+      font-weight: 400;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heading-bar">
+    <div class="heading-bar__frame">
+      <div class="heading-bar__bg"></div>
+      <div class="heading-bar__inner"></div>
+    </div>
+    <div class="heading-bar__title">Wie ist es hier zu leben?</div>
+  </div>
+
+</body>
+</html>
