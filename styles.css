@@ -627,14 +627,15 @@ transform: translate(-355%, 1200%);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-53%, -27%);
+    transform: translate(-50%, -50%);
     aspect-ratio: 16/9;
     z-index: 100;
+    width: min(42vw, 720px);
 }
 
 .page-8house .video video {
-    width: 110%;
-    height: 110%;
+    width: 100%;
+    height: auto;
     display: block;
     object-fit: cover;
 }
