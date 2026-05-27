@@ -278,6 +278,11 @@ h1 {
     animation-delay: 1s;
 }
 
+.building-link {
+    display: block;
+    text-decoration: none;
+}
+
 @keyframes home-rise {
     0% {
         transform: translateY(900%);
