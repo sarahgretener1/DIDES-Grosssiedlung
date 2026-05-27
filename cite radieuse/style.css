@@ -36,7 +36,7 @@ body {
     background: rgba(255,225,0,0.5);
     color:  rgb(255, 0, 0);
 }
-/* .info-box-yellow-r bleibt als Alias für bestehende Verwendungen erhalten */
+/* Keep .info-box-yellow-r as a compatibility alias */
 
 .info-box-yellow:hover,
 .info-box-yellow-r:hover{
