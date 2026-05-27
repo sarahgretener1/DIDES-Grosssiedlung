@@ -17,15 +17,10 @@ body {
 }
  
 /*dach info*/
-.info-box-yellow{
+.info-box {
     position: fixed;
-    bottom: 100px;
-    right: 20px;
-    width: 500px;
-    background: rgba(255,225,0,0.5);
     font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
     font-size: 14px;
-    color:  rgb(255, 0, 0);
     line-height: 1.4;
     padding: 24px 24px 24px 24px;
     z-index: 200;
@@ -33,7 +28,18 @@ body {
     transition: opacity 0.3s;
 }
 
-.info-box-yellow:hover{
+.info-box-yellow,
+.info-box-yellow-r{
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 500px;
+    background: rgba(255,225,0,0.5);
+    color:  rgb(255, 0, 0);
+}
+
+.info-box-yellow:hover,
+.info-box-yellow-r:hover{
 opacity: 1;
 background: rgba(255,225,0);
 }
@@ -44,14 +50,7 @@ background: rgba(255,225,0);
     left: 20px;
     width: 300px;
     background: rgb(255, 0, 0,0.5);
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
     color: rgba(39, 20, 244);
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
 }
 
 .info-box-red:hover {
@@ -66,14 +65,7 @@ background: rgba(255,225,0);
     right: 80px;
     width: 300px;
     background: rgba(39, 20, 244, 0.5);
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
     color:rgba(255,225,0);
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
 }
 .info-box-blau:hover {
     opacity: 1;
@@ -105,13 +97,6 @@ background: rgba(255,225,0);
     width: 300px;
     background: rgb(255, 255, 255,0.5);
     color: #111;
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
 }
 
 .info-box-white:hover {
@@ -128,13 +113,7 @@ background: rgba(255,225,0);
     max-width: 300px;
     background: rgba(10,10,10,0.5);
     color: #fff;
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
     text-align: center;
-    opacity: 0.7;
-    transition: opacity 0.3s;
 }
 
 .info-box-black:hover {
