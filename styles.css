@@ -484,8 +484,11 @@ h1 {
 }
 
 .page-index .header-title h1 {
-    transition: transform 1s ease, opacity 1s ease;
     will-change: transform, opacity;
+}
+
+.header-title.is-animating h1 {
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .header-title.is-collapsing h1 {
