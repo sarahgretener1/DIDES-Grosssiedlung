@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architektur UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ─── COMPONENT 1 · NavBar ─── -->
+    <nav class="navbar">
+      <button class="navbar__btn">
+        <span class="navbar__btn-label">Alle Projekte</span>
+        <span class="navbar__btn-arrow">▶</span>
+      </button>
+      <span class="navbar__infos">Infos</span>
+    </nav>
+
+    <!-- gap -->
+    <div class="spacer"></div>
+
+    <!-- ─── COMPONENT 2 · ProjektDetail ─── -->
+    <div class="projekt">
+
+      <!-- Row 1 · Grosssiedlungen (static button) -->
+      <button class="projekt__btn projekt__btn--narrow">
+        <span>Grosssiedlungen</span>
+        <span class="arrow">▶</span>
+      </button>
+
+      <!-- Row 2 · Gebäude – Ort – epoche (dropdown toggle) -->
+      <div class="projekt__row" id="toggle-titel" onclick="toggleDropdown('titel')">
+        <button class="projekt__btn projekt__btn--full">
+          <span>Gebäude – Ort – epoche</span>
+        </button>
+        <span class="arrow arrow--outside" id="arrow-titel">▲</span>
+      </div>
+
+      <!-- Row 3 · Body text (dropdown content) -->
+      <p class="projekt__text" id="content-titel">
+        Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt.
+        Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der
+        „vertikalen Stadt". Es kombiniert Wohnungen, Einkaufsmöglichkeiten und
+        Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen
+        und gemeinschaftlichen Lebensraums.
+      </p>
+
+      <!-- Row 4 · Architekt (dropdown toggle) -->
+      <div class="projekt__row" id="toggle-architekt" onclick="toggleDropdown('architekt')">
+        <button class="projekt__btn projekt__btn--full">
+          <span>Architekt</span>
+        </button>
+        <span class="arrow arrow--outside" id="arrow-architekt">▼</span>
+      </div>
+
+      <!-- Architekt content (dropdown content, hidden by default) -->
+      <p class="projekt__text projekt__text--hidden" id="content-architekt">
+        Le Corbusier (1887–1965), bürgerlicher Name Charles-Édouard Jeanneret, war ein
+        schweizerisch-französischer Architekt, Stadtplaner und Künstler. Er gilt als einer der
+        bedeutendsten Architekten des 20. Jahrhunderts und Pionier der modernen Architektur.
+      </p>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      const content = document.getElementById('content-' + id);
+      const arrow   = document.getElementById('arrow-'   + id);
+      const isOpen  = !content.classList.contains('projekt__text--hidden');
+
+      if (isOpen) {
+        content.classList.add('projekt__text--hidden');
+        arrow.textContent = '▼';
+      } else {
+        content.classList.remove('projekt__text--hidden');
+        arrow.textContent = '▲';
+      }
+    }
+  </script>
+
+</body>
+</html>
