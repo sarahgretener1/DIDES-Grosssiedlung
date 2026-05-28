@@ -29,12 +29,9 @@ h1 {
   font-size: 15rem;
   font-weight: 400;
   font-style: normal;
-  animation: grosssiedlung 1s ease-out forwards;
   transform-origin: top center;
- transform: scaleY(3.5) translateY(12%);
- opacity: 1;
- animation-iteration-count: 1;
- animation-delay: 1s;
+  transform: scaleY(3.5) translateY(12%);
+  opacity: 1;
 }
 
 /*
@@ -302,6 +299,10 @@ h1 {
 
 
 .scroll-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -324,7 +325,6 @@ h1 {
   user-select: none;
   transition: background-color 0.15s ease, color 0.15s ease;
   z-index: 1000;
-  align-self: center;
 }
  
 .btn-arrow {
@@ -344,7 +344,7 @@ h1 {
 .scroll-btn:active {
   background-color: #222;
   color: #fff;
-  transform: translateY(1px);
+  transform: translateX(-50%) translateY(1px);
 }
  
 
@@ -356,9 +356,13 @@ h1 {
     position: relative;
     z-index: 10;
     transform-origin: top center;
+    opacity: 1;
+    transform: translateY(-35%);
+}
+
+.home.scroll-animate {
     opacity: 0;
     animation: home-rise 0.9s ease-out forwards;
-    animation-delay: 1s;
 }
 
 .building-link {
