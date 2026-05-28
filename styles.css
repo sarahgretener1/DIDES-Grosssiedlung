@@ -1219,3 +1219,368 @@ transform: translate(-355%, 1200%);
 .page-index-2 .projekt__text--hidden {
   display: none;
 }
+
+/* cite radieuse*/
+
+.info-box {
+    font-family: 'Barlow Condensed', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    
+
+    width: 300px;
+    position: fixed;
+    padding: 30px;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+/*dach info*/
+.info-box-yellow-r{
+    top: 160px;
+    right: 50px;
+    background: rgba(255,225,0);
+    color: rgb(255, 0, 0);
+}
+
+.info-box-yellow-r:hover{
+opacity: 1;
+}
+
+.info-box-yellow-l{
+    bottom: 160px;
+    left: 50px;
+    background: rgba(255,225,0);
+    color: rgb(255, 0, 0);
+}
+
+.info-box-yellow-l:hover{
+opacity: 1;
+}
+
+.info-box-red-l{
+    bottom: 200px;
+    left: 20px;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.info-box-red-l:hover {
+    opacity: 1;
+}
+
+.info-box-red-o{
+    top: 100px;
+    justify-self: center;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.info-box-red-o:hover {
+    opacity: 1;
+}
+
+.info-box-red-r{
+    top: 200px;
+    right: 20px;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.info-box-red-r:hover {
+    opacity: 1;
+}
+
+
+/*room infos*/
+.info-box-blau-l{
+ 
+    top: 280px;
+    left: 80px;
+    background: rgba(39, 20, 244);
+    color:rgba(255,225,0);
+
+}
+.info-box-blau-l:hover {
+    opacity: 1;}
+
+    .info-box-blau-r{
+ 
+    bottom: 180px;
+    right: 80px;
+    background: rgba(39, 20, 244);
+    color:rgba(255,225,0);
+
+}
+.info-box-blau-r:hover {
+    opacity: 1;}
+
+.bild-radieuse {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 60px;
+    width: 300px;
+    z-index: 300;
+    opacity: 0.7;
+    transition: width 1s, opacity 1s;}
+
+.bild-radieuse:hover {
+    opacity: 1;
+    width: 800px;
+}
+
+
+
+
+/*front infos*/
+.info-box-white-l {
+    bottom: 130px;
+    left: 24px;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.info-box-white-l:hover {
+    opacity: 1;
+}
+
+.info-box-white-o {
+    top: 80px;
+    justify-self: center;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.info-box-white-o:hover {
+    opacity: 1;
+}
+
+.info-box-white-r {
+    bottom: 130px;
+    right: 24px;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.info-box-white-r:hover {
+    opacity: 1;
+}
+
+
+
+
+.triangle-overlay {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.85);
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+}
+/* ── NAVIGATION BOX UNTEN MITTE ── */
+.navigation-box {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 100px;                  
+    height: 100px;
+    background: rgba(255, 255, 255);
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: 0;
+    padding: 0;
+}
+
+/* UP (rot) */
+.triangle-up {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 13px 22px 13px;
+    border-color: transparent transparent  rgb(255, 0, 0) transparent;
+}
+
+/* DOWN (gelb) */
+.triangle-down {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 22px 13px 0 13px;
+    border-color: rgb(255, 225, 0) transparent transparent transparent;
+}
+
+/* LEFT (schwarz) */
+.triangle-left {
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 13px 22px 13px 0;
+    border-color: transparent black transparent transparent;
+}
+
+/* RIGHT (blau) */
+.triangle-right {
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 13px 0 13px 22px;
+    border-color: transparent transparent transparent rgb(39, 20, 244);
+}
+
+
+/* ddr */
+
+#toggleVideoBtn {
+    position: fixed;
+    top: 40%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 49%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+#toggleVideoBtn:hover {
+    background: #444;
+}
+
+#toggleVideoBtn2 {
+ position: fixed;
+    top: 10%;     /* So überlagert es sich nicht mit der .ui-top-left */
+    left: 35%;
+    z-index: 120;
+    background: #000;
+    color: #fff;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+
+.background {
+    /* Deine bisherige Hintergrund-Grafik */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #c8e6f1 url('haus2.png') center center no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.video-frame {
+    position: absolute;
+    z-index: 1000;
+    aspect-ratio: 16 / 9;
+    background: #222;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video1 { /* Oben links */
+    top: 4.3%;
+    left: 34.6%;
+    width: 14.2%;
+}
+.video2 { /* Mitte rechts */
+    top: 45%;
+    left: 17.5%;
+    width: 14.2%;
+}
+.video3 { /* Unten rechts */
+    top: 65.3%;
+    left: 34.6%;
+    width: 14.2%;;
+}
+
+.video4 { /* Unten rechts */
+    top: 65.3%;
+    left: 68%;
+    width: 14.2%;
+}
+
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* oder object-fit: contain; */
+    aspect-ratio: 16 / 9;
+}
+
+.video-lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 10000000;
+  justify-content: center;
+  align-items: center;
+}
+.video-lightbox.active {
+  display: flex;
+}
+.video-lightbox-inner {
+  position: relative;
+  width: 80vw;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+.video-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 2.3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 0 10px;
+  line-height: 1;
+  user-select: none;
+}
+#lightbox-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #000;
+}
