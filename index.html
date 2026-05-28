@@ -63,7 +63,7 @@ function hideScrollButton() {
   }
 }
 
-function scrollToContent() {
+function showContentState({ animate, smoothScroll }) {
   const content = document.getElementById('content');
   const headerTitle = document.querySelector('.header-title');
   const home = document.querySelector('.home');
@@ -74,16 +74,36 @@ function scrollToContent() {
 
   if (home) {
     home.classList.remove('scroll-animate');
-    void home.offsetWidth;
-    home.classList.add('scroll-animate');
+
+    if (animate) {
+      home.style.animation = '';
+      home.style.opacity = '';
+      home.style.transform = '';
+      void home.offsetWidth;
+      home.classList.add('scroll-animate');
+    } else {
+      home.style.animation = 'none';
+      home.style.opacity = '1';
+      home.style.transform = 'translateY(-20%)';
+    }
   }
 
   if (content) {
-    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    content.scrollIntoView({ behavior: smoothScroll ? 'smooth' : 'auto', block: 'start' });
   }
 
   hideScrollButton();
 }
+
+function scrollToContent() {
+  showContentState({ animate: true, smoothScroll: true });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.hash === '#content') {
+    showContentState({ animate: false, smoothScroll: false });
+  }
+});
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
