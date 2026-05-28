@@ -19,11 +19,13 @@
     <!-- Titel -->
     <div class="header-title">
         <h1>Grosssiedlungen</h1>
-        <button class="scroll-btn" type="button" onclick="scrollToContent()">
-          <span class="btn-label">Wie ist es hier zu leben?</span>
-          <span class="btn-arrow" aria-hidden="true">▼</span>
-        </button>
     </div>
+
+    <!-- Scroll Button (fixed at page bottom) -->
+    <button class="scroll-btn" type="button" onclick="scrollToContent()">
+      <span class="btn-label">Wie ist es hier zu leben?</span>
+      <span class="btn-arrow" aria-hidden="true">▼</span>
+    </button>
 
       <section id="content">
     <!--fenster & lichtquellen-->    
@@ -56,9 +58,16 @@
 function scrollToContent() {
   const content = document.getElementById('content');
   const headerTitle = document.querySelector('.header-title');
+  const home = document.querySelector('.home');
 
   if (headerTitle) {
     headerTitle.classList.add('is-collapsing');
+  }
+
+  if (home) {
+    home.classList.remove('scroll-animate');
+    void home.offsetWidth;
+    home.classList.add('scroll-animate');
   }
 
   if (content) {
