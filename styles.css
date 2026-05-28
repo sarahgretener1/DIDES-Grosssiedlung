@@ -407,6 +407,7 @@ h1 {
     transform: translate(-11.2%, -2%);
     z-index: 1;
     opacity: 1;
+    transition: opacity 0.35s ease-in-out;
 }
 
 .cite-radieuse {
@@ -419,6 +420,7 @@ h1 {
     z-index: 1;
     opacity: 0;
     transform: translate(47%, -13.5%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-cite_radieuse1:hover) .home-fenster,
@@ -466,6 +468,7 @@ h1 {
     z-index: 1;
     opacity: 0;
     transform: translate(-27.7%, -22.2%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-8house:hover) .home-fenster,
@@ -496,6 +499,7 @@ h1 {
     z-index: 1;
     opacity: 0;
    transform: translate(29%, 5%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-nakagin1:hover) .home-fenster,
@@ -545,6 +549,7 @@ h1 {
     z-index: 1;
     opacity: 0;
    transform: translate(-11%, -8.2%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-plattenbau1:hover) .home-fenster,
@@ -591,8 +596,46 @@ h1 {
 {
     opacity: 1;
 }
+.light-8house,
+.light-cite_radieuse1,
+.light-cite_radieuse2,
+.light-cite_radieuse3,
+.light-nakagin1,
+.light-nakagin2,
+.light-nakagin3,
+.light-plattenbau1,
+.light-plattenbau2,
+.light-plattenbau3,
+.light-plattenbau4 {
+    animation: light-blink 1.8s ease-in-out infinite alternate;
+    transition: opacity 0.3s ease-in-out;
+}
 
+.light-cite_radieuse2,
+.light-nakagin2,
+.light-plattenbau2 {
+    animation-delay: 0.35s;
+}
 
+.light-cite_radieuse3,
+.light-nakagin3,
+.light-plattenbau3 {
+    animation-delay: 0.7s;
+}
+
+.light-plattenbau4,
+.light-8house {
+    animation-delay: 1.05s;
+}
+
+@keyframes light-blink {
+    0% {
+        opacity: 0.45;
+    }
+    100% {
+        opacity: 0.95;
+    }
+}
 
 .light-8house {
     background-color: rgba(255, 255, 0, 0.578);
