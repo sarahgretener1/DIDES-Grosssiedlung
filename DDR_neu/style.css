@@ -63,44 +63,141 @@ canvas {
     color: #000;
 }
 
-/* ── RECHTES UI: Panel & Dropdown ── */
-.ui-top-right {
+/* ── LEFT UI: Grosssiedlungen + Info ── */
+.ui-top-left {
     position: fixed;
     top: 16px;
-    right: 16px;
-    width: 290px;
-    z-index: 800;
+    left: 16px;
     display: flex;
-    flex-direction: column;
-    border: black solid 10px;
+    gap: 12px;
+    width: auto;
+    height: auto;
+    padding: 11px 0px 11px 15px;
+        background-color: #000000;
+    z-index: 100;
+}
+
+.btn-gross {
+    background: #ffffff;
+    color: #000;
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    width: 190px;
+    height: 32px;
+    padding-left: 5px;
+    border: none;
+    cursor: pointer;
+    text-transform: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
     gap: 0;
 }
 
+.btn-info {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    padding-top: 1px;
+    padding-right: 12px;
+
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.btn-info::after {
+    content: '▶';
+    font-size: 9px;
+    color: #000;
+}
+
+/* ── RIGHT UI: Panel ── */
+.ui-top-right {
+    position: fixed;
+    top: 60px;
+    left: 16px;
+    width: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 11px 0px 10px 15px;
+     background-color: #000000; 
+}
+
+.panel-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+/*
+.panel-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #fff;
+}
+
+.panel-indicator {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    z-index: 3;
+}
+*/
 .dropdown-row {
     background: #000;
     color: #fff;
     display: flex;
     align-items: center;
+    width: 266.5px;
+    height: 32px;
     justify-content: space-between;
-    border-bottom: 1px solid #333;
+    padding: 0;
+    border-bottom: 1px solid #000;
     cursor: pointer;
+    user-select: none;
     position: relative;
+}
+
+.dropdown-row:first-child {
+    padding-top: 0;
 }
 
 .dropdown-ticker-wrap {
     flex: 1;
     overflow: hidden;
+    font-family: "Squada One", Arial, sans-serif;
     height: 30px;
     display: flex;
     align-items: center;
     background: #fff;
+    position: relative;
 }
 
 .dropdown-ticker {
     white-space: nowrap;
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 900;
+    font-family: "Squada One", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
     color: #000;
     display: inline-block;
     animation: ticker-scroll 12s linear infinite;
@@ -117,12 +214,13 @@ canvas {
 }
 
 .dropdown-arrow {
-    background: #000;
+    background: none;
     color: #fff;
-    font-size: 11px;
-    padding: 0 8px;
+    font-size: 20px;
     height: 30px;
     display: flex;
+    margin-left: 19px;
+    margin-right: 19px;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -139,16 +237,41 @@ canvas {
     transition: max-height 0.35s ease, padding 0.25s ease;
     background: #000;
     color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
+    font-family: 'barlow condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    width: 205px;
+    height: auto;
     line-height: 1.6;
-    padding: 0 10px;
+    padding: 0px 0px 0px 5px;
 }
 
 .dropdown-content.open {
     max-height: 200px;
-    padding: 10px 10px;
+    padding: 10px 30px 12px 5px;
 }
+
+.panel-wrapper {
+    position: relative;
+    background: #000;
+}
+
+/* ui-elements overrides */
+.page-ui-elements .btn-gross {
+    background: #000;
+    color: #fff;
+}
+
+.page-ui-elements .btn-info {
+    background: #fff;
+    color: #000;
+}
+
+.page-ui-elements .ui-top-right {
+    width: 276px;
+    border: none;
+}
+
 
 #toggleVideoBtn {
     position: fixed;
