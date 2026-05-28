@@ -631,7 +631,7 @@ h1 {
 
 @keyframes light-blink {
     0% {
-        opacity: 0.2;
+        opacity: 0.55;
     }
     100% {
         opacity: 1;
@@ -658,7 +658,7 @@ h1 {
 }
 
 .light-cite_radieuse1 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -668,7 +668,7 @@ transform: translate(195%, 430%) ;
 }
 
 .light-cite_radieuse2 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -678,7 +678,7 @@ transform: translate(305%, 430%) ;
 }
 
 .light-cite_radieuse3 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -688,7 +688,7 @@ transform: translate(413%, 430%) ;
 }
 
 .light-nakagin1 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -699,7 +699,7 @@ transform: translate(330%, 1050%) ;
 }
 
 .light-nakagin2 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -710,7 +710,7 @@ transform: translate(330%, 1287%) ;
 }
 
 .light-nakagin3 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -721,7 +721,7 @@ transform: translate(330%, 1520%) ;
 }
 
 .light-plattenbau1 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -731,7 +731,7 @@ transform: translate(-215%, 1000%);
 }
 
 .light-plattenbau2 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -741,7 +741,7 @@ transform: translate(-215%, 1200%);
 }
 
 .light-plattenbau3 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -751,7 +751,7 @@ transform: translate(-355%, 1000%);
 }
 
 .light-plattenbau4 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
