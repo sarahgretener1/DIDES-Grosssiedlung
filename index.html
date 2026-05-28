@@ -72,11 +72,23 @@
 </section>
 <script>
 const scrollBtn = document.querySelector('.scroll-btn');
+const content = document.getElementById('content');
+let maxScrollY = 0;
 
-function hideScrollButton() {
-  if (scrollBtn) {
-    scrollBtn.classList.add('is-hidden');
+function updateScrollBounds() {
+  if (!content) return;
+  maxScrollY = Math.max(0, Math.round(content.getBoundingClientRect().top + window.scrollY));
+}
+
+function enforceMaxScroll() {
+  if (window.scrollY > maxScrollY) {
+    window.scrollTo({ top: maxScrollY, behavior: 'auto' });
   }
+}
+
+function updateScrollButtonVisibility() {
+  if (!scrollBtn) return;
+  scrollBtn.classList.toggle('is-hidden', window.scrollY > 10);
 }
 
 function toggleProjectsDropdown(event) {
@@ -90,7 +102,6 @@ function toggleProjectsDropdown(event) {
 }
 
 function showContentState({ animate, smoothScroll }) {
-  const content = document.getElementById('content');
   const headerTitle = document.querySelector('.header-title');
   const home = document.querySelector('.home');
 
@@ -118,7 +129,7 @@ function showContentState({ animate, smoothScroll }) {
     content.scrollIntoView({ behavior: smoothScroll ? 'smooth' : 'auto', block: 'start' });
   }
 
-  hideScrollButton();
+  updateScrollButtonVisibility();
 }
 
 function scrollToContent() {
@@ -126,9 +137,14 @@ function scrollToContent() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  updateScrollBounds();
+
   if (window.location.hash === '#content') {
     showContentState({ animate: false, smoothScroll: false });
   }
+
+  enforceMaxScroll();
+  updateScrollButtonVisibility();
 });
 
 window.addEventListener('click', (event) => {
@@ -142,9 +158,13 @@ window.addEventListener('click', (event) => {
 });
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
-    hideScrollButton();
-  }
+  enforceMaxScroll();
+  updateScrollButtonVisibility();
+});
+
+window.addEventListener('resize', () => {
+  updateScrollBounds();
+  enforceMaxScroll();
 });
 </script>
 <script src="/8 House/script.js"></script>
