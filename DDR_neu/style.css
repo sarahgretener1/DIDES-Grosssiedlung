@@ -42,26 +42,6 @@ canvas {
     gap: 0;
 }
 
-.btn-info {
-    background: #000;
-    color: #fff;
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 900;
-    padding: 6px 10px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-}
-
-.btn-info::after {
-    content: '▶';
-    font-size: 9px;
-    color: #000;
-}
 
 /* ── LEFT UI: Grosssiedlungen + Info ── */
 .ui-top-left {
@@ -124,7 +104,7 @@ canvas {
     top: 60px;
     left: 16px;
     width: auto;
-    z-index: 100;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -247,7 +227,7 @@ canvas {
 }
 
 .dropdown-content.open {
-    max-height: 200px;
+    max-height: 300px;
     padding: 10px 30px 12px 5px;
 }
 
@@ -318,7 +298,7 @@ canvas {
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #b7e0ee url('haus2.png') center center no-repeat;
+    background: #c8e6f1 url('haus2.png') center center no-repeat;
     background-size: contain;
     z-index: 0;
 }
@@ -341,7 +321,7 @@ canvas {
 }
 .video2 { /* Mitte rechts */
     top: 45%;
-    left: 17.4%;
+    left: 17.5%;
     width: 14.2%;
 }
 .video3 { /* Unten rechts */

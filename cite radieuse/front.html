@@ -8,7 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+   
+   
+   <style>
       #street-view-iframe {
         position: fixed;
         left: 0; top: 0;
@@ -20,35 +26,41 @@
     </style>
   </head>
   <body>
-    <!-- TOP LEFT -->
+     <!-- TOP LEFT UNterseite -->
     <div class="ui-top-left">
-        <button class="btn-gross">Grosssiedlungen</button>
-        <button class="btn-info">Info</button>
+                    <a href="../index.html" class="btn-gross" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                      Grosssiedlungen <div style="font-size: 20px; padding-left: 5px;">▶</div>
+                    </a>
+                
+        <button class="btn-info" style="opacity: 0;">Infos</button>
     </div>
 
-    <!-- TOP RIGHT -->
+
     <div class="ui-top-right">
+        <div class="panel-wrapper">
 
             <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
                 <div class="dropdown-ticker-wrap">
-                    <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
+                    <span class="dropdown-ticker">Cité Radieuse • 1952 • Marseille • Brutalismus •</span>
                 </div>
                 <div class="dropdown-arrow">▼</div>
             </div>
             <div class="dropdown-content" id="content1">
-                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.</div>
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
+ </div>
 
             <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
                 <div class="dropdown-ticker-wrap">
-                    <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
+                    <span class="dropdown-ticker">Le Corbusier • Unité d'Habitation </span>
                 </div>
                 <div class="dropdown-arrow">▼</div>
             </div>
             <div class="dropdown-content" id="content2">
-              Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+                Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
             </div>
         </div>
     </div>
+
 
     <!-- STREET VIEW als IFRAME (kein JS/API!) -->
     <!-- TEXTBOX LINKS OBEN -->
