@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #street-view-iframe {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
+
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
+
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums. </div>
+
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+                Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+            </div>
+        </div>
+    </div>
+
+
+ <div class="background"></div>
+
+<div class="video-frame video1">
+  <video src="Plattenbau_bauen.mp4" controls></video>
+</div>
+<div class="video-frame video2">
+  <video src="Plattenbau_film.mp4" controls></video>
+</div>
+<div class="video-frame video3">
+  <video src="Plattebau_kinder.mp4" controls></video>
+</div>
+
+<div class="video-frame video4">
+  <video src="Plattebau_rassismus.mp4" controls></video>
+</div>
+
+<div class="video-lightbox" id="video-lightbox">
+  <div class="video-lightbox-inner">
+    <span class="video-lightbox-close" tabindex="0">&times;</span>
+    <video id="lightbox-video" src="" controls></video>
+  </div>
+</div>
+
+<script>
+  // Dropdowns
+  function toggleDropdown(contentId, rowId) {
+    const content = document.getElementById(contentId);
+    const row = document.getElementById(rowId);
+
+    content.classList.toggle('open');
+    row.classList.toggle('open');
+  }
+
+  // Videos anklickbar machen
+document.querySelectorAll('.video-frame video').forEach(function(video) {
+
+  video.addEventListener('pointerdown', function(e) {
+
+    e.preventDefault();
+
+    const src = video.getAttribute('src');
+
+    const lb = document.getElementById('video-lightbox');
+    const lbvid = document.getElementById('lightbox-video');
+
+    lb.classList.add('active');
+
+    lbvid.src = src;
+
+    lbvid.load();
+
+    lbvid.play();
+
+  });
+
+});
+
+  // Lightbox schliessen
+  function closeLightbox() {
+
+    const lb = document.getElementById('video-lightbox');
+    const lbvid = document.getElementById('lightbox-video');
+
+    lbvid.pause();
+
+    lb.classList.remove('active');
+
+    lbvid.src = '';
+
+  }
+
+  // X Button
+  document.querySelector('.video-lightbox-close')
+    .addEventListener('click', closeLightbox);
+
+  // Klick auf Hintergrund
+  document.getElementById('video-lightbox')
+    .addEventListener('click', function(e) {
+
+      if (e.target === this) {
+        closeLightbox();
+      }
+
+    });
+
+  // ESC Taste
+  document.addEventListener('keydown', function(e) {
+
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+
+  });
+</script>
+  </body>
+</html>

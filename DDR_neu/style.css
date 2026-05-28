@@ -211,17 +211,17 @@ canvas {
     align-items: center;
 }
 
-.video1 { /* Oben */
+.video1 { /* Oben links */
     top: 4.3%;
     left: 34.6%;
     width: 14.2%;
 }
-.video2 { /* Mitte links */
+.video2 { /* Mitte rechts */
     top: 45%;
     left: 17.4%;
     width: 14.2%;
 }
-.video3 { /* Unten links */
+.video3 { /* Unten rechts */
     top: 65.3%;
     left: 34.6%;
     width: 14.2%;;
