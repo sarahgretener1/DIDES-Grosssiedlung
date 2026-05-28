@@ -116,6 +116,7 @@ function showContentState({ animate, smoothScroll }) {
   const home = document.querySelector('.home');
 
   if (headerTitle) {
+    headerTitle.classList.toggle('is-animating', animate);
     headerTitle.classList.add('is-collapsing');
   }
 
