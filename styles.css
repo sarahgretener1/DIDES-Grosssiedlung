@@ -405,15 +405,9 @@ h1 {
 }
 
 .page-index .ui-top-left .btn-gross:hover,
-.page-8house .ui-top-left .btn-gross:hover,
-.page-8house .ui-top-left .btn-info:hover {
+.page-8house .ui-top-left .btn-gross:hover {
     background: #000;
     color: #fff;
-}
-
-.page-index .ui-top-left .btn-info:hover {
-    background: #fff;
-    color: #000;
 }
  
 
