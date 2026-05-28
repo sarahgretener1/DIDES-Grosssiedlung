@@ -1492,7 +1492,7 @@ opacity: 1;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #c8e6f1 url('/DDR_neu/haus2.png') center center no-repeat;
+    background: #c8e6f1 url('/DDR_neu/haus2.png') 170px center no-repeat;
     background-size: contain;
     z-index: 0;
 }
@@ -1509,25 +1509,25 @@ opacity: 1;
 }
 
 .video1 { /* Oben links */
-    top: 4.3%;
-    left: 34.6%;
-    width: 14.2%;
+    top: 4%;
+    left: 41.8%;
+    width: 17%;
 }
 .video2 { /* Mitte rechts */
-    top: 45%;
-    left: 17.5%;
-    width: 14.2%;
+    top: 44.5%;
+    left: 22.2%;
+    width: 17%;
 }
 .video3 { /* Unten rechts */
-    top: 65.3%;
-    left: 34.6%;
-    width: 14.2%;;
+    top: 24.1%;
+    left: 60.5%;
+    width: 17%;
 }
 
 .video4 { /* Unten rechts */
-    top: 65.3%;
-    left: 68%;
-    width: 14.2%;
+    top: 65%;
+    left: 80%;
+    width: 17%;
 }
 
 
