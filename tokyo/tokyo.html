@@ -2,40 +2,99 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>3D Würfel – nur horizontal drehbar</title>
-  <link rel="stylesheet" href="../styles.css">
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body { margin: 0; }
-    model-viewer { width: 100vw; height: 100vh; background: #fff; }
-  </style>
+  <title>Circle Image Layout</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts (optional, für tolle Headlines) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300..700&family=Squada+One&display=swap" rel="stylesheet">
 </head>
 <body>
-  <model-viewer
-    id="cube"
-    src="würfelblend2.glb"
-    alt="3D Würfel"
-    camera-controls
-    auto-rotate
-    disable-pan
-    style="background: #fff;">
-  </model-viewer>
+  <!-- Fixierte Navigation oben links -->
+  <div class="ui-top-left">
+    <button class="btn-gross" type="button" onclick="window.location.href='/index.html#content'">
+      Grosssiedlungen <span class="btn-gross-arrow" aria-hidden="true">▶</span>
+    </button>
+    <button class="btn-info" style="opacity: 0;">Infos</button>
+  </div>
+  <!-- Fixiertes Panel rechts -->
+  <div class="ui-top-right">
+    <div class="panel-wrapper">
+      <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+        <div class="dropdown-ticker-wrap">
+          <span class="dropdown-ticker">Nakagin Capsule Tower • 1972 • Tokyo • Metabolismus •</span>
+        </div>
+        <div class="dropdown-arrow">▼</div>
+      </div>
+      <div class="dropdown-content" id="content1">
+        Der Nakagin Capsule Tower war eines der bekanntesten futuristischen Gebaude Japans. Das Hochhaus bestand aus 140 austauschbaren Wohnkapseln, die an zwei Betonturme befestigt wurden. Die Idee war, die Kapseln regelmassig zu ersetzen und so ein „mitwachsendes“ Gebaude zu schaffen. Das Gebaude galt als Symbol der visionaren Architektur der Nachkriegszeit. 2022 wurde es abgerissen.
+      </div>
+      <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+        <div class="dropdown-ticker-wrap">
+          <span class="dropdown-ticker">Kisho Kurokawa • Unité d'Habitation</span>
+        </div>
+        <div class="dropdown-arrow">▼</div>
+      </div>
+      <div class="dropdown-content" id="content2">
+        Kisho Kurokawa war ein bedeutender japanischer Architekt und Mitbegrunder der Metabolismus-Bewegung. Seine Architektur verband Technologie, Modularitat und flexible Wohnformen. Er entwarf futuristische Gebaude, die sich wie lebendige Organismen verandern sollten. Der Nakagin Capsule Tower ist sein beruhmtestes Werk.
+      </div>
+    </div>
+  </div>
+
+  <!-- Vollflächiges Layout für Kreise -->
+  <div class="circlepage">
+    <div class="container">
+      <div class="circle a"></div>
+      <div class="circle b"></div>
+      <div class="circle c">
+        <video id="video-c" src="Tokyo aussen mit naration.mp4" playsinline loop></video>
+        <button class="playpause-btn" data-video="video-c"><span class="icon">&#9654;</span></button>
+      </div>
+      <div class="circle d">
+        <video id="video-d" src="artvideo.mp4" playsinline loop></video>
+        <button class="playpause-btn" data-video="video-d"><span class="icon">&#9654;</span></button>
+      </div>
+      <div class="circle e">
+        <video id="video-e" src="Tokyo innen.mp4" playsinline loop></video>
+        <button class="playpause-btn" data-video="video-e"><span class="icon">&#9654;</span></button>
+      </div>
+      <div class="circle f"></div>
+    </div>
+  </div>
+
   <script>
-    const viewer = document.getElementById('cube');
-    let radius, theta;
+    // Dropdown-Funktion (Ein/Ausklappen)
+    function toggleDropdown(contentId, rowId) {
+      document.querySelectorAll('.dropdown-content').forEach(el => {
+        if(el.id === contentId)
+          el.classList.toggle('open');
+        else
+          el.classList.remove('open');
+      });
+      document.querySelectorAll('.dropdown-row').forEach(el => {
+        if(el.id === rowId)
+          el.classList.toggle('open');
+        else
+          el.classList.remove('open');
+      });
+    }
 
-    // Beim ersten Klick (Drag-Start): Speichere Abstand (radius)
-    viewer.addEventListener('mousedown', () => {
-      const orbit = viewer.getCameraOrbit();
-      radius = orbit.radius;
-    });
+    // Video Play/Pause-Button Funktion mit Icon-Wechsel
+    document.querySelectorAll('.circlepage .playpause-btn').forEach(btn => {
+      const videoId = btn.dataset.video;
+      const video = document.getElementById(videoId);
+      const icon = btn.querySelector('.icon');
 
-    // Nach jeder Interaktion nur horizontalen Winkel zulassen
-    viewer.addEventListener('camera-change', () => {
-      const orbit = viewer.getCameraOrbit();
-      theta = orbit.theta;
-      // Setze phi (vertikal) immer auf 90 grad (also gerade horizontal)
-      viewer.cameraOrbit = `${theta} 90deg ${radius || orbit.radius}`;
+      btn.addEventListener('click', function() {
+        if (video.paused) {
+          video.muted = false;
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+      video.addEventListener('play', () => { icon.innerHTML = '&#10073;&#10073;'; });
+      video.addEventListener('pause', () => { icon.innerHTML = '&#9654;'; });
     });
   </script>
 </body>
