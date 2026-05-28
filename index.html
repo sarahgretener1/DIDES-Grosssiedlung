@@ -11,7 +11,23 @@
 <body class="page-index">
     <!-- TOP LEFT -->
     <div class="ui-top-left">
-        <button class="btn-gross" type="button" onclick="window.location.href='/index.html#content'">Alle Projekte <span class="btn-gross-arrow" aria-hidden="true">▶</span></button>
+        <div class="projects-nav" id="projectsNav">
+            <button
+                class="btn-gross"
+                type="button"
+                aria-expanded="false"
+                aria-controls="projectsDropdown"
+                onclick="toggleProjectsDropdown(event)"
+            >
+                Alle Projekte <span class="btn-gross-arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="projects-dropdown" id="projectsDropdown">
+                <a class="projects-dropdown-item" href="/8 House/8-house.html">8 House <span class="projects-dropdown-arrow" aria-hidden="true">▶</span></a>
+                <a class="projects-dropdown-item" href="/cite radieuse/front.html">Cité Radieuse <span class="projects-dropdown-arrow" aria-hidden="true">▶</span></a>
+                <a class="projects-dropdown-item" href="/nakagin/nakagin.html">Nakagin <span class="projects-dropdown-arrow" aria-hidden="true">▶</span></a>
+                <a class="projects-dropdown-item" href="/DDR_neu/ddr.html">Plattenbau <span class="projects-dropdown-arrow" aria-hidden="true">▶</span></a>
+            </div>
+        </div>
         <button class="btn-info">Infos</button>
     </div>
 
@@ -63,6 +79,16 @@ function hideScrollButton() {
   }
 }
 
+function toggleProjectsDropdown(event) {
+  event.stopPropagation();
+  const projectsNav = document.getElementById('projectsNav');
+  const trigger = projectsNav?.querySelector('.btn-gross');
+  if (!projectsNav || !trigger) return;
+
+  const isOpen = projectsNav.classList.toggle('is-open');
+  trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+
 function showContentState({ animate, smoothScroll }) {
   const content = document.getElementById('content');
   const headerTitle = document.querySelector('.header-title');
@@ -102,6 +128,16 @@ function scrollToContent() {
 window.addEventListener('DOMContentLoaded', () => {
   if (window.location.hash === '#content') {
     showContentState({ animate: false, smoothScroll: false });
+  }
+});
+
+window.addEventListener('click', (event) => {
+  const projectsNav = document.getElementById('projectsNav');
+  const trigger = projectsNav?.querySelector('.btn-gross');
+  if (!projectsNav || !trigger) return;
+  if (!projectsNav.contains(event.target)) {
+    projectsNav.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
   }
 });
 
