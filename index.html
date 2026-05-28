@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="page-index">
     <!-- TOP LEFT -->
     <div class="ui-top-left">
         <button class="btn-gross">Projekte</button>
@@ -19,12 +19,11 @@
     <!-- Titel -->
     <div class="header-title">
         <h1>Grosssiedlungen</h1>
+        <button class="scroll-btn" type="button" onclick="scrollToContent()">
+          <span class="btn-label">Wie ist es hier zu leben?</span>
+          <span class="btn-arrow" aria-hidden="true">▼</span>
+        </button>
     </div>
-
-     <button class="scroll-btn" type="button" onclick="document.getElementById('content').scrollIntoView({ behavior: 'smooth' })">
-      <span class="btn-label">Wie ist es hier zu leben?</span>
-      <span class="btn-arrow" aria-hidden="true">▼</span>
-    </button>
 
       <section id="content">
     <!--fenster & lichtquellen-->    
@@ -53,6 +52,20 @@
        
     </div>
 </section>
+<script>
+function scrollToContent() {
+  const content = document.getElementById('content');
+  const headerTitle = document.querySelector('.header-title');
+
+  if (headerTitle) {
+    headerTitle.classList.add('is-collapsing');
+  }
+
+  if (content) {
+    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+</script>
 <script src="/8 House/script.js"></script>
 </body>
 </html>
