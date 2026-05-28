@@ -451,6 +451,7 @@ h1 {
 .home:has(.light-cite_radieuse2:hover) .light-plattenbau4,
 .home:has(.light-cite_radieuse3:hover) .light-plattenbau4 {
     opacity: 0;
+    animation: none;
 }
 
 .home:has(.light-cite_radieuse1:hover) .cite-radieuse,
@@ -483,7 +484,7 @@ h1 {
 .home:has(.light-8house:hover) .light-plattenbau3,
 .home:has(.light-8house:hover) .light-plattenbau4 {
     opacity: 0;
-
+    animation: none;
 }
 
 .home:has(.light-8house:hover) .house-8{
@@ -530,7 +531,7 @@ h1 {
 .home:has(.light-nakagin2:hover) .light-plattenbau4,
 .home:has(.light-nakagin3:hover) .light-plattenbau4 {
     opacity: 0;
-
+    animation: none;
 }
 
 .home:has(.light-nakagin1:hover) .nakagin,
@@ -585,7 +586,7 @@ h1 {
 .home:has(.light-plattenbau3:hover) .light-8house,
 .home:has(.light-plattenbau4:hover) .light-8house {
     opacity: 0;
-
+    animation: none;
 }
 
 
@@ -607,7 +608,7 @@ h1 {
 .light-plattenbau2,
 .light-plattenbau3,
 .light-plattenbau4 {
-    animation: light-blink 1.8s ease-in-out infinite alternate;
+    animation: light-blink 0.95s ease-in-out infinite alternate;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -630,10 +631,10 @@ h1 {
 
 @keyframes light-blink {
     0% {
-        opacity: 0.45;
+        opacity: 0.2;
     }
     100% {
-        opacity: 0.95;
+        opacity: 1;
     }
 }
 
