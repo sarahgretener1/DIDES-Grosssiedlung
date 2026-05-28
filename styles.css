@@ -1492,7 +1492,7 @@ opacity: 1;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #c8e6f1 url('haus2.png') center center no-repeat;
+    background: #c8e6f1 url('/DDR_neu/haus2.png') center center no-repeat;
     background-size: contain;
     z-index: 0;
 }
