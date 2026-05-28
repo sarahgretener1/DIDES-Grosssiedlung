@@ -3,7 +3,7 @@
   <head>
     <title>unten</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
       #street-view-iframe {
         position: fixed;
@@ -17,14 +17,14 @@
   </head>
   <body>
     <!-- TOP LEFT -->
-    <div class="ui-top-left">
-        <button class="btn-gross" type="button" onclick="window.location.href='/index.html#content'">Grosssiedlungen</button>
-        <button class="btn-info">Info</button>
+        <div class="ui-top-left">
+        <button class="btn-gross" type="button" onclick="window.location.href='/index.html#content'">Grosssiedlungen <span class="btn-gross-arrow" aria-hidden="true">▶</span></button>
+        <button class="btn-info" style="opacity: 0;">Infos</button>
     </div>
 
-    <!-- TOP RIGHT -->
-    <div class="ui-top-right">
 
+    <div class="ui-top-right">
+        <div class="panel-wrapper">
             <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
                 <div class="dropdown-ticker-wrap">
                     <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
