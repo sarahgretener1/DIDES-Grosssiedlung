@@ -94,7 +94,14 @@ h1 {
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 0;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn-gross-arrow {
+    font-size: 15px;
+    line-height: 1;
+    padding-right: 6px;
 }
 
 .btn-info {
@@ -109,14 +116,58 @@ h1 {
     border: none;
     cursor: pointer;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: start;
 }
 
 .btn-info::after {
-    content: '▶';
-    font-size: 9px;
+    content: none;
+}
+
+.projects-nav {
+    position: relative;
+}
+
+.projects-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 190px;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+}
+
+.projects-nav.is-open .projects-dropdown {
+    display: flex;
+}
+
+.projects-dropdown-item {
     color: #000;
+    text-decoration: none;
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects-dropdown-item:hover,
+.projects-dropdown-item:focus-visible {
+    background: #000;
+    color: #fff;
+}
+
+.projects-dropdown-arrow {
+    color: #000;
+    font-size: 10px;
+}
+
+.projects-dropdown-item:hover .projects-dropdown-arrow,
+.projects-dropdown-item:focus-visible .projects-dropdown-arrow {
+    color: #fff;
 }
 
 /* ── RIGHT UI: Panel ── */
@@ -300,7 +351,7 @@ h1 {
 
 .scroll-btn {
   position: fixed;
-  bottom: 24px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
@@ -312,7 +363,7 @@ h1 {
  
   background-color: #fff;
   color: #000;
-  border: 5px solid #000;
+  border: 11px solid #000;
   outline: none;
  
   font-size: 1.5rem;
@@ -345,6 +396,18 @@ h1 {
   background-color: #222;
   color: #fff;
   transform: translateX(-50%) translateY(1px);
+}
+
+.scroll-btn.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-index .ui-top-left .btn-gross:hover,
+.page-8house .ui-top-left .btn-gross:hover {
+    background: #000;
+    color: #fff;
 }
  
 
@@ -388,6 +451,7 @@ h1 {
     transform: translate(-11.2%, -2%);
     z-index: 1;
     opacity: 1;
+    transition: opacity 0.35s ease-in-out;
 }
 
 .cite-radieuse {
@@ -400,6 +464,7 @@ h1 {
     z-index: 1;
     opacity: 0;
     transform: translate(47%, -13.5%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-cite_radieuse1:hover) .home-fenster,
@@ -430,6 +495,7 @@ h1 {
 .home:has(.light-cite_radieuse2:hover) .light-plattenbau4,
 .home:has(.light-cite_radieuse3:hover) .light-plattenbau4 {
     opacity: 0;
+    animation: none;
 }
 
 .home:has(.light-cite_radieuse1:hover) .cite-radieuse,
@@ -447,6 +513,7 @@ h1 {
     z-index: 1;
     opacity: 0;
     transform: translate(-27.7%, -22.2%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-8house:hover) .home-fenster,
@@ -461,7 +528,7 @@ h1 {
 .home:has(.light-8house:hover) .light-plattenbau3,
 .home:has(.light-8house:hover) .light-plattenbau4 {
     opacity: 0;
-
+    animation: none;
 }
 
 .home:has(.light-8house:hover) .house-8{
@@ -477,6 +544,7 @@ h1 {
     z-index: 1;
     opacity: 0;
    transform: translate(29%, 5%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-nakagin1:hover) .home-fenster,
@@ -507,7 +575,7 @@ h1 {
 .home:has(.light-nakagin2:hover) .light-plattenbau4,
 .home:has(.light-nakagin3:hover) .light-plattenbau4 {
     opacity: 0;
-
+    animation: none;
 }
 
 .home:has(.light-nakagin1:hover) .nakagin,
@@ -526,6 +594,7 @@ h1 {
     z-index: 1;
     opacity: 0;
    transform: translate(-11%, -8.2%);
+    transition: opacity 0.35s ease-in-out;
 }
 
 .home:has(.light-plattenbau1:hover) .home-fenster,
@@ -561,7 +630,7 @@ h1 {
 .home:has(.light-plattenbau3:hover) .light-8house,
 .home:has(.light-plattenbau4:hover) .light-8house {
     opacity: 0;
-
+    animation: none;
 }
 
 
@@ -572,8 +641,46 @@ h1 {
 {
     opacity: 1;
 }
+.light-8house,
+.light-cite_radieuse1,
+.light-cite_radieuse2,
+.light-cite_radieuse3,
+.light-nakagin1,
+.light-nakagin2,
+.light-nakagin3,
+.light-plattenbau1,
+.light-plattenbau2,
+.light-plattenbau3,
+.light-plattenbau4 {
+    animation: light-blink 0.95s ease-in-out infinite alternate;
+    transition: opacity 0.3s ease-in-out;
+}
 
+.light-cite_radieuse2,
+.light-nakagin2,
+.light-plattenbau2 {
+    animation-delay: 0.35s;
+}
 
+.light-cite_radieuse3,
+.light-nakagin3,
+.light-plattenbau3 {
+    animation-delay: 0.7s;
+}
+
+.light-plattenbau4,
+.light-8house {
+    animation-delay: 1.05s;
+}
+
+@keyframes light-blink {
+    0% {
+        opacity: 0.55;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .light-8house {
     background-color: rgba(255, 255, 0, 0.578);
@@ -595,7 +702,7 @@ h1 {
 }
 
 .light-cite_radieuse1 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -605,7 +712,7 @@ transform: translate(195%, 430%) ;
 }
 
 .light-cite_radieuse2 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -615,7 +722,7 @@ transform: translate(305%, 430%) ;
 }
 
 .light-cite_radieuse3 {
-    background-color: rgba(0, 247, 255, 0.557);
+    background-color: rgba(0, 70, 180, 0.62);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -625,7 +732,7 @@ transform: translate(413%, 430%) ;
 }
 
 .light-nakagin1 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -636,7 +743,7 @@ transform: translate(330%, 1050%) ;
 }
 
 .light-nakagin2 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -647,7 +754,7 @@ transform: translate(330%, 1287%) ;
 }
 
 .light-nakagin3 {
-    background-color: rgba(191, 0, 255, 0.289);
+    background-color: rgba(220, 20, 40, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -658,7 +765,7 @@ transform: translate(330%, 1520%) ;
 }
 
 .light-plattenbau1 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -668,7 +775,7 @@ transform: translate(-215%, 1000%);
 }
 
 .light-plattenbau2 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -678,7 +785,7 @@ transform: translate(-215%, 1200%);
 }
 
 .light-plattenbau3 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;
@@ -688,7 +795,7 @@ transform: translate(-355%, 1000%);
 }
 
 .light-plattenbau4 {
-    background-color: rgba(255, 0, 0, 0.363);
+    background-color: rgba(0, 165, 90, 0.48);
     grid-column: 2/3;
     grid-row: 3/4;
     z-index: 10;

@@ -42,6 +42,16 @@ canvas {
     gap: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+
+.btn-info::after {
+    content: '▶';
+    font-size: 9px;
+    color: #000;
+}
+>>>>>>> e655d3a90f1c28344cce1851b30d0cd65610808b
 
 /* ── LEFT UI: Grosssiedlungen + Info ── */
 .ui-top-left {

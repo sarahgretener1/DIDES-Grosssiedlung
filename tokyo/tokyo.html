@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Würfel – nur horizontal drehbar</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { margin: 0; }
+    model-viewer { width: 100vw; height: 100vh; background: #fff; }
+  </style>
+</head>
+<body>
+  <model-viewer
+    id="cube"
+    src="würfelblend2.glb"
+    alt="3D Würfel"
+    camera-controls
+    auto-rotate
+    disable-pan
+    style="background: #fff;">
+  </model-viewer>
+  <script>
+    const viewer = document.getElementById('cube');
+    let radius, theta;
+
+    // Beim ersten Klick (Drag-Start): Speichere Abstand (radius)
+    viewer.addEventListener('mousedown', () => {
+      const orbit = viewer.getCameraOrbit();
+      radius = orbit.radius;
+    });
+
+    // Nach jeder Interaktion nur horizontalen Winkel zulassen
+    viewer.addEventListener('camera-change', () => {
+      const orbit = viewer.getCameraOrbit();
+      theta = orbit.theta;
+      // Setze phi (vertikal) immer auf 90 grad (also gerade horizontal)
+      viewer.cameraOrbit = `${theta} 90deg ${radius || orbit.radius}`;
+    });
+  </script>
+</body>
+</html>
