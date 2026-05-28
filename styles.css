@@ -97,6 +97,12 @@ h1 {
     gap: 0;
 }
 
+.btn-gross-arrow {
+    font-size: 20px;
+    line-height: 1;
+    padding-left: 5px;
+}
+
 .btn-info {
     background: #000000;
     color: #ffffff;
