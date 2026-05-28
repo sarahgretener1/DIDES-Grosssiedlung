@@ -17,6 +17,9 @@ body {
     overflow-y: auto;
 }
 
+a {
+    text-decoration: none;
+}
 p {
   font-family: "Squada One", sans-serif;
   font-size: 1rem;
@@ -322,6 +325,148 @@ h1 {
 .page-ui-elements .ui-top-right {
     width: 276px;
     border: none;
+}
+
+/* info page */
+.page-info {
+    margin-top: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+    color: #000;
+    padding: 72px 16px 20px;
+}
+
+.page-info .ui-top-left .btn-gross {
+    background: #000;
+    color: #fff;
+}
+
+.page-info .ui-top-left .btn-info {
+    background: #fff;
+    color: #000;
+    padding-left: 8px;
+}
+
+.page-info .info-page-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.page-info .info-sidebar {
+    width: 100%;
+}
+
+.page-info .info-sidebar-box {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 12px;
+}
+
+.page-info .info-sidebar-box h2 {
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 auto 10px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.page-info .info-sidebar-box p {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.page-info .info-sidebar-box p + p {
+    margin-top: 10px;
+}
+
+.page-info .info-main {
+    width: 100%;
+}
+
+.page-info .info-sources-box {
+    border: 2px solid #000;
+    background: #000;
+}
+
+.page-info .info-sources-header {
+    background: #fff;
+    color: #000;
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.page-info .info-sources-content {
+    padding: 0;
+}
+
+.page-info .info-accordion-item {
+    border-top: 2px solid #000;
+}
+
+.page-info .info-accordion-trigger {
+    width: 100%;
+    border: none;
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-align: left;
+}
+
+.page-info .info-accordion-trigger h3 {
+    font-family: 'Squada One', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.page-info .info-accordion-trigger .chevron {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.page-info .info-accordion-trigger[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+}
+
+.page-info .info-accordion-body {
+    display: none;
+    background: #000;
+    color: #fff;
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+    padding: 0 10px;
+}
+
+.page-info .info-accordion-body.open {
+    display: block;
+    padding: 10px;
+}
+
+@media (max-width: 900px) {
+    .page-info .info-page-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 /*index page*/
@@ -1492,7 +1637,7 @@ opacity: 1;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #c8e6f1 url('/DDR_neu/haus2.png') center center no-repeat;
+    background: #c8e6f1 url('/DDR_neu/haus2.png') 170px center no-repeat;
     background-size: contain;
     z-index: 0;
 }
@@ -1509,25 +1654,25 @@ opacity: 1;
 }
 
 .video1 { /* Oben links */
-    top: 4.3%;
-    left: 34.6%;
-    width: 14.2%;
+    top: 4%;
+    left: 41.8%;
+    width: 17%;
 }
 .video2 { /* Mitte rechts */
-    top: 45%;
-    left: 17.5%;
-    width: 14.2%;
+    top: 44.5%;
+    left: 22.2%;
+    width: 17%;
 }
 .video3 { /* Unten rechts */
-    top: 65.3%;
-    left: 34.6%;
-    width: 14.2%;;
+    top: 24.1%;
+    left: 60.5%;
+    width: 17%;
 }
 
 .video4 { /* Unten rechts */
-    top: 65.3%;
-    left: 68%;
-    width: 14.2%;
+    top: 65%;
+    left: 80%;
+    width: 17%;
 }
 
 
