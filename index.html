@@ -74,6 +74,8 @@
 const scrollBtn = document.querySelector('.scroll-btn');
 const content = document.getElementById('content');
 let maxScrollY = 0;
+let minScrollY = 0;
+let isUpwardScrollLocked = false;
 
 function updateScrollBounds() {
   if (!content) return;
@@ -83,6 +85,10 @@ function updateScrollBounds() {
 function enforceMaxScroll() {
   if (window.scrollY > maxScrollY) {
     window.scrollTo({ top: maxScrollY, behavior: 'auto' });
+  }
+
+  if (isUpwardScrollLocked && window.scrollY < minScrollY) {
+    window.scrollTo({ top: minScrollY, behavior: 'auto' });
   }
 }
 
@@ -132,8 +138,16 @@ function showContentState({ animate, smoothScroll }) {
   updateScrollButtonVisibility();
 }
 
+function lockUpwardScrollAtContent() {
+  updateScrollBounds();
+  minScrollY = maxScrollY;
+  isUpwardScrollLocked = true;
+  enforceMaxScroll();
+}
+
 function scrollToContent() {
   showContentState({ animate: true, smoothScroll: true });
+  window.setTimeout(lockUpwardScrollAtContent, 700);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
