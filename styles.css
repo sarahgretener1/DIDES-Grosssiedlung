@@ -493,6 +493,11 @@ h1 {
     opacity: 0;
 }
 
+.page-index:has(#content:target) .header-title h1 {
+    transform: scaleY(0.05) translateY(-65%);
+    opacity: 0;
+}
+
 
 .scroll-btn {
   position: fixed;
@@ -1729,4 +1734,3 @@ opacity: 1;
   border-radius: 8px;
   background: #000;
 }
-
