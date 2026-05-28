@@ -4,239 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grosssiedlungen</title>
-  <style>
-    
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --black: #0a0a0a;
-      --white: #f5f5f0;
-      --border: 2px solid #0a0a0a;
-    }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    /* ── TOP NAV ── */
-    header {
-      padding: 12px 16px;
-      border-bottom: var(--border);
-    }
-
-    .nav-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: var(--border);
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Space Mono', monospace;
-      font-weight: 700;
-      font-size: 13px;
-      padding: 6px 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-
-    .nav-tag .arrow {
-      font-size: 10px;
-    }
-
-    /* ── LAYOUT ── */
-    .page {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      min-height: calc(100vh - 50px);
-    }
-
-    /* ── SIDEBAR ── */
-    aside {
-      border-right: var(--border);
-      padding: 20px 16px;
-    }
-
-    .sidebar-box {
-      border: var(--border);
-      padding: 0;
-    }
-
-    .sidebar-box h2 {
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      background: var(--black);
-      color: var(--white);
-      padding: 6px 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .sidebar-box p {
-      padding: 10px 10px 0;
-      font-size: 12px;
-      line-height: 1.55;
-      color: #222;
-    }
-
-    .sidebar-box p + p {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    /* ── MAIN ── */
-    main {
-      padding: 20px 24px;
-    }
-
-    .sources-box {
-      border: var(--border);
-    }
-
-    .sources-header {
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      background: var(--black);
-      color: var(--white);
-      padding: 6px 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .sources-content {
-      padding: 20px 24px;
-    }
-
-    /* ── ACCORDION ITEMS ── */
-    .accordion-item {
-      border-bottom: var(--border);
-      padding: 18px 0;
-    }
-
-    .accordion-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .accordion-trigger {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 0;
-      text-align: left;
-    }
-
-    .accordion-trigger h3 {
-      font-family: 'Space Mono', monospace;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--black);
-      letter-spacing: -0.01em;
-    }
-
-    .accordion-trigger .chevron {
-      font-size: 10px;
-      color: var(--black);
-      transition: transform 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .accordion-trigger[aria-expanded="true"] .chevron {
-      transform: rotate(180deg);
-    }
-
-    .accordion-body {
-      margin-top: 10px;
-      font-size: 12.5px;
-      color: #111;
-      line-height: 1.6;
-      display: none;
-    }
-
-    .accordion-body.open {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="page-info">
+  <div class="ui-top-left">
+    <button class="btn-gross" type="button" onclick="window.location.href='index.html#content'">
+      <span>Grosssiedlungen</span>
+      <span class="btn-gross-arrow">&#9658;</span>
+    </button>
+    <button class="btn-info" type="button">Info &#9658;</button>
+  </div>
 
-  <header>
-    <div class="nav-tag">Grosssiedlungen <span class="arrow">&#9658;</span></div>
-  </header>
-
-  <div class="page">
-    <!-- SIDEBAR -->
-    <aside>
-      <div class="sidebar-box">
+  <div class="info-page-layout">
+    <aside class="info-sidebar">
+      <div class="info-sidebar-box">
         <h2>Informationen</h2>
         <p>Die im Rahmen des Moduls DIDES entstandene Website beschäftigt sich mit Grosswohnsiedlungen. Vier Bauprojekte werden vorgestellt und erfahrbar gemacht.</p>
         <p>Verwendung: Zu den einzelnen Projekten gelangst du per Klick auf die farbigen Fenster oder über die Navigation oben rechts auf der Startseite.</p>
       </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main>
-      <div class="sources-box">
-        <div class="sources-header">Quellen</div>
-        <div class="sources-content">
-
-          <!-- 8 House -->
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="true" onclick="toggle(this)">
+    <main class="info-main">
+      <div class="info-sources-box">
+        <div class="info-sources-header">Quellen</div>
+        <div class="info-sources-content">
+          <div class="info-accordion-item">
+            <button class="info-accordion-trigger" aria-expanded="true" onclick="toggle(this)">
               <h3>8 House</h3>
               <span class="chevron">&#9660;</span>
             </button>
-            <div class="accordion-body open">
+            <div class="info-accordion-body open">
               Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt". Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
             </div>
           </div>
 
-          <!-- Cité Radieuse -->
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="true" onclick="toggle(this)">
+          <div class="info-accordion-item">
+            <button class="info-accordion-trigger" aria-expanded="true" onclick="toggle(this)">
               <h3>Cité Radieuse</h3>
               <span class="chevron">&#9660;</span>
             </button>
-            <div class="accordion-body open">
+            <div class="info-accordion-body open">
               Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt". Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
             </div>
           </div>
 
-          <!-- Plattenbau DDR -->
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="true" onclick="toggle(this)">
+          <div class="info-accordion-item">
+            <button class="info-accordion-trigger" aria-expanded="true" onclick="toggle(this)">
               <h3>Plattenbau DDR</h3>
               <span class="chevron">&#9660;</span>
             </button>
-            <div class="accordion-body open">
+            <div class="info-accordion-body open">
               Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt". Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
             </div>
           </div>
 
-          <!-- Nakagin Capsule Tower -->
-          <div class="accordion-item">
-            <button class="accordion-trigger" aria-expanded="true" onclick="toggle(this)">
+          <div class="info-accordion-item">
+            <button class="info-accordion-trigger" aria-expanded="true" onclick="toggle(this)">
               <h3>Nakagin Capsule Tower</h3>
               <span class="chevron">&#9660;</span>
             </button>
-            <div class="accordion-body open">
+            <div class="info-accordion-body open">
               Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt". Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
             </div>
           </div>
-
         </div>
       </div>
     </main>
@@ -250,6 +80,5 @@
       body.classList.toggle('open', !expanded);
     }
   </script>
-
 </body>
 </html>
