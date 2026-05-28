@@ -318,7 +318,7 @@ canvas {
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #265668 url('haus2.png') center center no-repeat;
+    background: #b7e0ee url('haus2.png') center center no-repeat;
     background-size: contain;
     z-index: 0;
 }
