@@ -1,4 +1,3 @@
-/* ── DREIECKE OVERLAY ── */
 
 .navigation-box svg {
     display: block;
@@ -16,74 +15,105 @@ body {
     font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
  
-/*dach info*/
-.info-box-yellow{
+
+.info-box {
+    font-family: 'Barlow Condensed', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    
+
+    width: 300px;
     position: fixed;
-    bottom: 100px;
-    right: 20px;
-    width: 500px;
-    background: rgba(255,225,0,0.5);
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    color:  rgb(255, 0, 0);
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
+    padding: 30px;
     z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    opacity: 0.6;
 }
 
-.info-box-yellow:hover{
+/*dach info*/
+.info-box-yellow-r{
+    top: 160px;
+    right: 50px;
+    background: rgba(255,225,0);
+    color: rgb(255, 0, 0);
+}
+
+.info-box-yellow-r:hover{
 opacity: 1;
-background: rgba(255,225,0);
 }
 
-.info-box-red{
-    position: fixed;
+.info-box-yellow-l{
+    bottom: 160px;
+    left: 50px;
+    background: rgba(255,225,0);
+    color: rgb(255, 0, 0);
+}
+
+.info-box-yellow-l:hover{
+opacity: 1;
+}
+
+.info-box-red-l{
     bottom: 200px;
     left: 20px;
-    width: 300px;
-    background: rgb(255, 0, 0,0.5);
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    color: rgba(39, 20, 244);
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
-.info-box-red:hover {
+.info-box-red-l:hover {
     opacity: 1;
-    background:  rgb(255, 0, 0);
 }
+
+.info-box-red-o{
+    top: 100px;
+    justify-self: center;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.info-box-red-o:hover {
+    opacity: 1;
+}
+
+.info-box-red-r{
+    top: 200px;
+    right: 20px;
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.info-box-red-r:hover {
+    opacity: 1;
+}
+
 
 /*room infos*/
-.info-box-blau{
-    position: fixed;
-    bottom: 80px;
-    right: 80px;
-    width: 300px;
-    background: rgba(39, 20, 244, 0.5);
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
+.info-box-blau-l{
+ 
+    top: 280px;
+    left: 80px;
+    background: rgba(39, 20, 244);
     color:rgba(255,225,0);
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+
 }
-.info-box-blau:hover {
-    opacity: 1;
-    background: rgb(39, 20, 244);}
+.info-box-blau-l:hover {
+    opacity: 1;}
+
+    .info-box-blau-r{
+ 
+    bottom: 180px;
+    right: 80px;
+    background: rgba(39, 20, 244);
+    color:rgba(255,225,0);
+
+}
+.info-box-blau-r:hover {
+    opacity: 1;}
 
 .bild-radieuse {
     display: block;
     position: fixed;
-    top: 100px;
-    left: 40px;
+    top: 60px;
+    right: 60px;
     width: 300px;
     z-index: 300;
     opacity: 0.7;
@@ -91,56 +121,47 @@ background: rgba(255,225,0);
 
 .bild-radieuse:hover {
     opacity: 1;
-    width: 500px;
+    width: 800px;
 }
 
 
 
 
-/*fron infos*/
-.info-box-white {
-    position: fixed;
-    top: 130px;
+/*front infos*/
+.info-box-white-l {
+    bottom: 130px;
     left: 24px;
-    width: 300px;
-    background: rgb(255, 255, 255,0.5);
-    color: #111;
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    line-height: 1.4;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
 }
 
-.info-box-white:hover {
+.info-box-white-l:hover {
     opacity: 1;
-    background: rgba(255,255,255);
 }
 
-/* ── QUOTE BOX BOTTOM CENTER ── */
-.info-box-black {
-    position: fixed;
-    right: 100px;
-    bottom: 40px;
-    min-width: 200px;
-    max-width: 300px;
-    background: rgba(10,10,10,0.5);
-    color: #fff;
-    font-family: 'Roboto Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    font-size: 14px;
-    padding: 24px 24px 24px 24px;
-    z-index: 200;
-    text-align: center;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+.info-box-white-o {
+    top: 80px;
+    justify-self: center;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
 }
 
-.info-box-black:hover {
+.info-box-white-o:hover {
     opacity: 1;
-      background: rgba(10,10,10);
 }
+
+.info-box-white-r {
+    bottom: 130px;
+    right: 24px;
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.info-box-white-r:hover {
+    opacity: 1;
+}
+
+
 
 
 
@@ -318,8 +339,6 @@ background: rgba(255,225,0);
     top: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.85);
-    border-radius: 24px;
-    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
     width: 160px;
     height: 160px;
     display: flex;
@@ -335,8 +354,7 @@ background: rgba(255,225,0);
     transform: translateX(-50%);
     width: 100px;                  
     height: 100px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 16px;
+    background: rgba(255, 255, 255);
    
     display: flex;
     align-items: center;

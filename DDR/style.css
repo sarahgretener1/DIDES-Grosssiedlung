@@ -188,3 +188,102 @@ canvas {
     outline: none;
     transition: background 0.18s;
 }
+
+.background {
+    /* Deine bisherige Hintergrund-Grafik */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #265668 url('haus2.png') center center no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+.video-frame {
+    position: absolute;
+    z-index: 1000;
+    aspect-ratio: 16 / 9;
+    background: #222;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video1 { /* Oben */
+    top: 4.3%;
+    left: 34.6%;
+    width: 14.2%;
+}
+.video2 { /* Mitte links */
+    top: 45%;
+    left: 17.4%;
+    width: 14.2%;
+}
+.video3 { /* Unten links */
+    top: 65.3%;
+    left: 34.6%;
+    width: 14.2%;;
+}
+
+.video4 { /* Unten rechts */
+    top: 65.3%;
+    left: 68%;
+    width: 14.2%;
+}
+
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* oder object-fit: contain; */
+    aspect-ratio: 16 / 9;
+}
+
+.video-lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 10000000;
+  justify-content: center;
+  align-items: center;
+}
+.video-lightbox.active {
+  display: flex;
+}
+.video-lightbox-inner {
+  position: relative;
+  width: 80vw;
+  max-width: 1080px;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+.video-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  font-size: 2.3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  padding: 0 10px;
+  line-height: 1;
+  user-select: none;
+}
+#lightbox-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #000;
+}

@@ -1,166 +1,145 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>GLB Video Play/Pause mit Dropdown</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html>
+  <head>
+    <title>dach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #street-view-iframe {
+        position: fixed;
+        left: 0; top: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP LEFT -->
+    <div class="ui-top-left">
+        <button class="btn-gross">Grosssiedlungen</button>
+        <button class="btn-info">Info</button>
+    </div>
 
-<video id="windowVideo" src="Plattenbau_bauen.mp4" loop style="display:none"></video>
-<video id="windowVideo2" src="Plattenbau_film.mp4" loop style="display:none"></video>
+    <!-- TOP RIGHT -->
+    <div class="ui-top-right">
 
-<!-- EIN Knopf, der dynamisch zwischen Play/Pause wechselt -->
-<button id="toggleVideoBtn">▶</button>
-<button id="toggleVideoBtn2">▶</button>
+            <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content1">
+                Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums. </div>
 
-<!-- UI-Ecke oben links -->
-<div class="ui-top-left">
-  <button class="btn-gross">Grosssiedlungen</button>
-  <button class="btn-info">Info</button>
+            <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
+                <div class="dropdown-ticker-wrap">
+                    <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
+                </div>
+                <div class="dropdown-arrow">▼</div>
+            </div>
+            <div class="dropdown-content" id="content2">
+                Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+            </div>
+        </div>
+    </div>
+
+
+ <div class="background"></div>
+
+<div class="video-frame video1">
+  <video src="Plattenbau_bauen.mp4" controls></video>
+</div>
+<div class="video-frame video2">
+  <video src="Plattenbau_film.mp4" controls></video>
+</div>
+<div class="video-frame video3">
+  <video src="Plattebau_kinder.mp4" controls></video>
 </div>
 
-<!-- DROPDOWN oben rechts -->
-<div class="ui-top-right" style="position:absolute; top:20px; right:20px; z-index:1000; min-width:300px;">
-  <div class="dropdown-row" id="row1" onclick="toggleDropdown('content1','row1')">
-    <div class="dropdown-ticker-wrap">
-      <span class="dropdown-ticker">Cité Radieuse • Le Corbusier • 1952 • Marseille • Brutalismus •</span>
-    </div>
-    <div class="dropdown-arrow">▼</div>
-  </div>
-  <div class="dropdown-content" id="content1" style="display:none;">
-    Die La Cité Radieuse in Marseille, Frankreich, wurde 1952 von Le Corbusier fertiggestellt. Das Gebäude ist ein wegweisendes Wohnprojekt der Moderne und basiert auf dem Konzept der „vertikalen Stadt“. Es kombiniert Wohnungen, Einkaufsmöglichkeiten und Gemeinschaftsbereiche in einem einzigen Baukörper und verfolgt die Idee eines funktionalen und gemeinschaftlichen Lebensraums.
-  </div>
-  <div class="dropdown-row" id="row2" onclick="toggleDropdown('content2','row2')">
-    <div class="dropdown-ticker-wrap">
-      <span class="dropdown-ticker">Unité d'Habitation • Modulor • Pilotis • </span>
-    </div>
-    <div class="dropdown-arrow">▼</div>
-  </div>
-  <div class="dropdown-content" id="content2" style="display:none;">
-    Le Corbusier war ein schweizerisch-französischer Architekt und einer der wichtigsten Vertreter der modernen Architektur. Seine Werke zeichnen sich durch funktionale Formen, klare Strukturen und innovative Wohnkonzepte aus. Mit seinen Ideen zur Wohnform prägte er die Architektur des 20. Jahrhunderts.
+<div class="video-frame video4">
+  <video src="Plattebau_rassismus.mp4" controls></video>
+</div>
+
+<div class="video-lightbox" id="video-lightbox">
+  <div class="video-lightbox-inner">
+    <span class="video-lightbox-close" tabindex="0">&times;</span>
+    <video id="lightbox-video" src="" controls></video>
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/loaders/GLTFLoader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.134/examples/js/controls/OrbitControls.js"></script>
 <script>
-let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-let renderer = new THREE.WebGLRenderer({antialias:true});
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor('#82b3b5');
-document.body.appendChild(renderer.domElement);
+  // Dropdowns
+  function toggleDropdown(contentId, rowId) {
+    const content = document.getElementById(contentId);
+    const row = document.getElementById(rowId);
 
-let light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(2, 2, 2);
-scene.add(light);
-scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+    content.classList.toggle('open');
+    row.classList.toggle('open');
+  }
 
-let controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.1;
-controls.enablePan = false;
-controls.enableZoom = true;
-controls.minDistance = 0.7;
-controls.maxDistance = 5;
+  // Videos anklickbar machen
+document.querySelectorAll('.video-frame video').forEach(function(video) {
 
-controls.minAzimuthAngle = -Math.PI / 2; // -90 Grad
-controls.maxAzimuthAngle =  Math.PI / 2; // +90 Grad
-controls.minPolarAngle   = Math.PI / 2;  // 90°
-controls.maxPolarAngle   = Math.PI / 2;  // 90°
+  video.addEventListener('pointerdown', function(e) {
 
-// Video-Texturen
-const video = document.getElementById('windowVideo');
-const videoTexture = new THREE.VideoTexture(video);
-videoTexture.center.set(0.5, 0.5);
-videoTexture.rotation = -Math.PI / 2;
+    e.preventDefault();
 
-const video2 = document.getElementById('windowVideo2');
-const videoTexture2 = new THREE.VideoTexture(video2);
-videoTexture2.center.set(0.5, 0.5);
-videoTexture2.rotation = -Math.PI / 2;
+    const src = video.getAttribute('src');
 
-// GLB laden und beide Videos zuweisen
-let loader = new THREE.GLTFLoader();
-loader.load('cube.glb', function(gltf){
-  let cube = gltf.scene;
-  cube.rotation.y = Math.PI;
+    const lb = document.getElementById('video-lightbox');
+    const lbvid = document.getElementById('lightbox-video');
 
-  cube.traverse(function(child) {
-    if (child.isMesh && child.material) {
-      if (child.material.name === "window1") {
-        child.material.map = videoTexture;
-        child.material.needsUpdate = true;
-      }
-      if (child.material.name === "window2") {
-        child.material.map = videoTexture2;
-        child.material.needsUpdate = true;
-      }
-    }
+    lb.classList.add('active');
+
+    lbvid.src = src;
+
+    lbvid.load();
+
+    lbvid.play();
+
   });
 
-  scene.add(cube);
 });
 
-camera.position.z = 1.5;
+  // Lightbox schliessen
+  function closeLightbox() {
 
-function animate() {
-  requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
-}
-animate();
+    const lb = document.getElementById('video-lightbox');
+    const lbvid = document.getElementById('lightbox-video');
 
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth/window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
+    lbvid.pause();
 
-// Toggle Play/Pause mit EINEM Knopf (nur für das erste Video)
-const toggleBtn = document.getElementById('toggleVideoBtn');
-toggleBtn.addEventListener('click', function() {
-  if (video.paused) {
-    video.play();
-    toggleBtn.textContent = '⏸';
-  } else {
-    video.pause();
-    toggleBtn.textContent = '▶';
+    lb.classList.remove('active');
+
+    lbvid.src = '';
+
   }
-});
-video.addEventListener('ended', function() {
-  toggleBtn.textContent = '▶';
-});
 
-// Neu für windowVideo2:
-const toggleBtn2 = document.getElementById('toggleVideoBtn2');
-toggleBtn2.addEventListener('click', function() {
-  if (video2.paused) {
-    video2.play();
-    toggleBtn2.textContent = '⏸';
-  } else {
-    video2.pause();
-    toggleBtn2.textContent = '▶';
-  }
-});
-video2.addEventListener('ended', function() {
-  toggleBtn2.textContent = '▶';
-});
+  // X Button
+  document.querySelector('.video-lightbox-close')
+    .addEventListener('click', closeLightbox);
 
-// Simple Dropdown-Logik
-function toggleDropdown(contentId, rowId) {
-  const content = document.getElementById(contentId);
-  const row = document.getElementById(rowId);
-  if(content.style.display === "block") {
-    content.style.display = "none";
-    row.classList.remove('open');
-  } else {
-    content.style.display = "block";
-    row.classList.add('open');
-  }
-}
+  // Klick auf Hintergrund
+  document.getElementById('video-lightbox')
+    .addEventListener('click', function(e) {
+
+      if (e.target === this) {
+        closeLightbox();
+      }
+
+    });
+
+  // ESC Taste
+  document.addEventListener('keydown', function(e) {
+
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+
+  });
 </script>
-</body>
+  </body>
 </html>
