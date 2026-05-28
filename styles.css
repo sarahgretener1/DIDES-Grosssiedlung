@@ -346,6 +346,25 @@ h1 {
   color: #fff;
   transform: translateX(-50%) translateY(1px);
 }
+
+.scroll-btn.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-index .ui-top-left .btn-gross:hover,
+.page-index .ui-top-left .btn-info:hover,
+.page-8house .ui-top-left .btn-gross:hover,
+.page-8house .ui-top-left .btn-info:hover {
+    background: #000;
+    color: #fff;
+}
+
+.page-index .ui-top-left .btn-info:hover::after,
+.page-8house .ui-top-left .btn-info:hover::after {
+    color: #fff;
+}
  
 
 .home {
