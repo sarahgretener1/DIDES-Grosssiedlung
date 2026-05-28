@@ -55,6 +55,14 @@
     </div>
 </section>
 <script>
+const scrollBtn = document.querySelector('.scroll-btn');
+
+function hideScrollButton() {
+  if (scrollBtn) {
+    scrollBtn.classList.add('is-hidden');
+  }
+}
+
 function scrollToContent() {
   const content = document.getElementById('content');
   const headerTitle = document.querySelector('.header-title');
@@ -73,7 +81,15 @@ function scrollToContent() {
   if (content) {
     content.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  hideScrollButton();
 }
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    hideScrollButton();
+  }
+});
 </script>
 <script src="/8 House/script.js"></script>
 </body>
