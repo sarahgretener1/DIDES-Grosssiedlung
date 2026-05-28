@@ -292,7 +292,7 @@ h1 {
     transition: max-height 0.35s ease, padding 0.25s ease;
     background: #000;
     color: #fff;
-    font-family: 'barlow condensed', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 13px;
     font-weight: 500;
     width: 205px;
@@ -378,7 +378,7 @@ h1 {
 }
 
 .page-info .info-sidebar-box p {
-    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 18px;
     line-height: 1.25;
 }
@@ -452,7 +452,7 @@ h1 {
     display: none;
     background: #000;
     color: #fff;
-    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 18px;
     line-height: 1.25;
     padding: 0 10px;
@@ -1368,7 +1368,7 @@ transform: translate(-355%, 1200%);
 /* cite radieuse*/
 
 .info-box {
-    font-family: 'Barlow Condensed', monospace;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 20px;
     font-weight: 500;
     
