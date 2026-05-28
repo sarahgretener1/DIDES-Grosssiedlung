@@ -26,13 +26,13 @@ h1 {
   font-style: normal;
   animation: grosssiedlung 1s ease-out forwards;
   transform-origin: top center;
- transform: scaleY(5) translateY(0);
+ transform: scaleY(3.5) translateY(12%);
  opacity: 1;
  animation-iteration-count: 1;
  animation-delay: 1s;
 }
 
-
+/*
 @keyframes grosssiedlung {
 
     0% {
@@ -50,7 +50,7 @@ h1 {
     }
 
 }
-
+*/
 
 .page-nakagin {
     background: #333333;
@@ -277,6 +277,53 @@ h1 {
     z-index: 20;
 }
 
+
+.scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+ 
+  padding: 0.65rem 1.5rem 0.65rem 1.75rem;
+ 
+  background-color: #fff;
+  color: #000;
+  border: 5px solid #000;
+  outline: none;
+ 
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Squada One', Arial, sans-serif;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+ 
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  z-index: 1000;
+}
+ 
+.btn-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+ 
+/* ── Hover / Focus ─────────────────────────────────────── */
+.scroll-btn:hover,
+.scroll-btn:focus-visible {
+  background-color: #000;
+  color: #fff;
+}
+ 
+/* ── Active (pressed) ──────────────────────────────────── */
+.scroll-btn:active {
+  background-color: #222;
+  color: #fff;
+  transform: translateY(1px);
+}
+ 
+
 .home {
     width: 100%;
     display: grid;
@@ -305,6 +352,7 @@ h1 {
         opacity: 1;
     }
 }
+
 .home-fenster {
     position: absolute;
     width: 172vw;
