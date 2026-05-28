@@ -306,7 +306,7 @@ h1 {
 
 .scroll-btn {
   position: fixed;
-  bottom: 24px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: inline-flex;
@@ -318,7 +318,7 @@ h1 {
  
   background-color: #fff;
   color: #000;
-  border: 5px solid #000;
+  border: 11px solid #000;
   outline: none;
  
   font-size: 1.5rem;
